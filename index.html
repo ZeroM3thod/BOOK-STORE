@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Books for All</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fefdfb;--ink:#1c1c1c;--orange:#f47c2c}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);overflow-x:hidden}
+#wrap{width:100%;overflow:hidden;position:relative}
+#stage{position:absolute;top:0;left:0;width:1906px;height:1220px;transform-origin:0 0;background:var(--bg);font-family:'Manrope','Helvetica Neue',Arial,sans-serif;color:var(--ink);overflow:hidden}
+.abs{position:absolute}
+.nav-line{left:71px;top:130px;width:1763px;height:2px;background:var(--ink)}
+.vdiv{top:36px;width:2px;height:95px;background:var(--ink)}
+.link{top:36px;height:95px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:500;transform:translateX(-50%)}
+.btn{left:1591px;top:37px;width:195px;height:57px;border-radius:29px;background:var(--ink);color:#fff;font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center}
+.eyebrow{left:143px;top:309px;font-size:22px;font-weight:700;color:var(--orange);letter-spacing:.2px}
+.h{font-family:'Outfit',sans-serif;font-weight:700;font-size:196px;line-height:196px;color:#1d1d1d;white-space:nowrap}
+.pill{left:268px;top:373px;width:138px;height:315px;border:26px solid #1d1d1d;border-radius:69px}
+.input{left:143px;top:747px;width:490px;height:72px;border:1.5px solid var(--ink);border-radius:36px;display:flex;align-items:center;padding-left:28px;font-size:20px;font-weight:500}
+.go{left:569px;top:754px;width:58px;height:58px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center}
+.shop{left:681px;top:765px;font-size:22px;font-weight:600}
+.para{left:143px;top:1022px;width:600px;font-size:22px;line-height:34.5px;font-weight:500}
+.para a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+svg.books{position:absolute;left:0;top:0}
+.bt{font-family:'Outfit',sans-serif;font-weight:700;font-size:54px;fill:#fff;letter-spacing:1px}
+[data-go],[data-act],.hit{cursor:pointer}
+.link:hover,.shop:hover{opacity:.6}
+.btn{transition:background .2s}.btn:hover{background:#000}
+.go{border:0;padding:0;cursor:pointer}
+#q{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;color:inherit;height:100%;padding-right:76px}
+#q::placeholder{color:#1c1c1c;opacity:1}
+svg.books{pointer-events:none}
+.hit{pointer-events:auto;fill:rgba(255,255,255,0);transition:fill .2s}.hit:hover{fill:rgba(255,255,255,.12)}
+#view{position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;font-family:'Manrope',Arial,sans-serif;color:var(--ink)}
+#view[hidden],#modal[hidden]{display:none}
+.vtop{display:flex;align-items:center;gap:20px;padding:calc(20px + env(safe-area-inset-top,0px)) 5vw 20px;border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--bg);z-index:2}
+.vback{border:2px solid var(--ink);border-radius:30px;background:none;padding:10px 20px;font:600 16px 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer}
+.vback:hover{background:var(--ink);color:#fff}
+.vtitle{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(28px,5vw,56px)}
+.vbody{padding:32px 5vw calc(80px + env(safe-area-inset-bottom,0px));max-width:1200px;margin:auto}
+.bar{display:flex;gap:20px;align-items:center;margin-bottom:18px;font-weight:600}
+.sq,.fi{width:100%;border:1.5px solid var(--ink);border-radius:30px;padding:14px 22px;font:500 17px 'Manrope',Arial,sans-serif;background:none;color:var(--ink);outline:0}
+.sq{flex:1}.fi{margin:8px 0}textarea.fi{border-radius:20px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{border:1.5px solid var(--ink);border-radius:30px;padding:8px 18px;background:none;font:600 15px 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer}
+.chip.on{background:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:28px}
+.cover{aspect-ratio:3/4;border-radius:6px;padding:18px;display:flex;align-items:flex-end;font:700 24px/1.1 'Outfit',sans-serif;box-shadow:7px 0 0 #000;color:#fff}
+.meta{margin:14px 0 10px;line-height:1.5}
+.add{border:0;background:var(--ink);color:#fff;border-radius:30px;padding:10px 18px;font:600 15px 'Manrope',Arial,sans-serif;cursor:pointer}
+.add:hover{background:var(--orange)}
+.post{border-bottom:2px solid var(--ink);padding:22px 0;cursor:pointer}
+.post h3{font:700 clamp(22px,3vw,30px) 'Outfit',sans-serif}.post small{color:var(--orange);font-weight:700}
+.post p{display:none;margin-top:10px;max-width:70ch;line-height:1.6}.post.open p{display:block}
+.about p{max-width:70ch;line-height:1.7;font-size:20px;margin-bottom:18px}
+.tm{border:2px solid var(--ink);border-radius:16px;padding:24px;cursor:pointer;text-align:left;background:none;font:inherit;color:var(--ink)}
+.tm:hover{background:#fff}
+.av{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 22px 'Outfit',sans-serif;color:#fff;margin-bottom:14px}
+#modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:20px}
+.mbox{background:var(--bg);color:var(--ink);border:2px solid var(--ink);border-radius:20px;padding:32px;width:min(440px,100%);position:relative;font-family:'Manrope',Arial,sans-serif}
+.mbox h2{font:700 32px 'Outfit',sans-serif;margin-bottom:12px}
+.sub{width:100%;margin-top:10px;border:0;background:var(--ink);color:#fff;border-radius:30px;padding:14px;font:700 17px 'Manrope',Arial,sans-serif;cursor:pointer}
+.sub:hover{background:var(--orange)}
+.mx{position:absolute;top:12px;right:18px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--ink)}
+#toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 22px;border-radius:30px;z-index:200;font:600 15px 'Manrope',Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center}
+#toast.on{opacity:1}
+.cover{position:relative;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -2.2 1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+.cb{position:absolute;top:14px;left:14px;background:#fff;color:#1c1c1c;border-radius:20px;padding:4px 12px;font:700 12px 'Manrope',Arial,sans-serif;letter-spacing:.5px}
+.pcb{display:block;width:100%;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.pr{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pr s{opacity:.5;font-size:.9em}
+.crow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1.5px solid var(--ink)}.crow span{flex:1}.crow.tot{font-size:20px;border-bottom:0}
+.rm{border:0;background:none;font-size:22px;cursor:pointer;color:var(--ink)}
+.il{list-style:none;margin:0 0 14px}.il li{padding:8px 0;border-bottom:1.5px solid var(--ink)}
+#land{background:var(--bg);color:var(--ink);font-family:'Manrope',Arial,sans-serif;padding:60px 5vw calc(40px + env(safe-area-inset-bottom,0px));max-width:1906px;margin:0 auto}
+.sec{margin-bottom:96px}
+.lh{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-top:2px solid var(--ink);padding-top:28px;margin-bottom:40px;flex-wrap:wrap}
+.lh small{display:block;color:var(--orange);font-weight:700;font-size:20px;margin-bottom:12px}
+.lh h2{font:700 clamp(40px,7vw,110px)/.95 'Outfit',sans-serif}
+.lnk{border:1.5px solid var(--ink);border-radius:36px;padding:14px 28px;background:none;font:600 20px 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer}
+.lnk:hover{background:var(--ink);color:#fff}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px}
+.cbox{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;min-height:280px;padding:28px;border:0;box-shadow:8px 0 0 #000;cursor:pointer;text-align:left;font-family:inherit;transition:transform .2s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -2.2 1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+.cbox:hover{transform:translateY(-6px)}
+.bdg{width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.ct{font:700 clamp(32px,3.4vw,52px)/1 'Outfit',sans-serif;text-transform:uppercase}
+.cn{font:600 20px 'Manrope',Arial,sans-serif}
+#lsingles{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.combos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.cmb{border:2px solid var(--ink);padding:28px;box-shadow:8px 0 0 #000;display:flex;flex-direction:column}
+.cmb h3{font:700 30px/1.1 'Outfit',sans-serif;margin-top:14px}
+.cb2{display:inline-block;background:var(--orange);color:#fff;border-radius:20px;padding:5px 14px;font:700 13px 'Manrope',Arial,sans-serif;letter-spacing:.5px}
+.cmb ul{list-style:none;margin:18px 0 22px;flex:1}.cmb li{padding:9px 0;border-bottom:1.5px solid var(--ink)}.cmb li span{opacity:.6;font-size:.9em}
+.lf{border-top:2px solid var(--ink);padding:28px 0 8px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;font-weight:500}
+.lf nav{display:flex;flex-wrap:wrap;gap:8px 28px}
+.fb{border:0;background:none;font:600 18px 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer}.fb:hover{color:var(--orange)}
+.fcart{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));z-index:40;border:0;background:var(--ink);color:#fff;border-radius:30px;padding:14px 24px;font:700 17px 'Manrope',Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.fcart:hover{background:var(--orange)}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .cb{z-index:1}
+.combos{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px}
+.mhero{display:none;background:var(--bg);color:var(--ink);font-family:'Manrope',Arial,sans-serif;padding:env(safe-area-inset-top,0px) 5vw 0}
+.mbar{display:flex;align-items:center;height:76px;border-bottom:2px solid var(--ink)}
+.mbar>svg{cursor:pointer;flex:none}.mbar .sp{flex:1}
+.mi{width:56px;height:100%;border:0;border-left:2px solid var(--ink);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);flex:none}
+.mbtn{margin:0 14px;border:0;background:var(--ink);color:#fff;border-radius:30px;padding:11px 22px;font:700 16px 'Manrope',Arial,sans-serif;cursor:pointer;white-space:nowrap;max-width:34vw;overflow:hidden;text-overflow:ellipsis;flex:none}
+.mpanel{display:none;flex-direction:column;border-bottom:2px solid var(--ink)}
+.mnav.open .mpanel{display:flex}
+.mpanel button{border:0;border-top:1.5px solid var(--ink);background:none;padding:16px 4px;text-align:left;font:600 20px 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer}
+.mbody{display:grid;grid-template-columns:1fr;gap:20px;padding-top:44px}
+.mtxt{padding-bottom:30px;min-width:0}
+.mbk{width:min(100%,520px);margin-left:auto;overflow:hidden}
+.mbooks{width:100%;height:auto;display:block}
+.meyebrow{color:var(--orange);font-weight:700;font-size:clamp(15px,2.2vw,22px);cursor:pointer;display:inline-block}
+.mh{position:relative;font-family:'Outfit',sans-serif;font-weight:700;font-size:16vw;width:4.5em;height:1.95em;color:#1d1d1d;margin:16px 0 26px;cursor:pointer}
+.mh .t{position:absolute;white-space:nowrap;line-height:1}
+.mh .pl{position:absolute;left:.673em;top:.168em;width:.704em;height:1.607em;border:.133em solid #1d1d1d;border-radius:.352em}
+.mrow{display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap}
+.mform{display:flex;align-items:center;flex:1 1 260px;max-width:490px;height:clamp(54px,6vw,72px);border:1.5px solid var(--ink);border-radius:40px;padding:0 6px 0 22px}
+.mform input{flex:1;min-width:0;border:0;outline:0;background:none;font:500 18px 'Manrope',Arial,sans-serif;color:var(--ink)}
+.mform input::placeholder{color:var(--ink);opacity:1}
+.mgo{flex:none;width:clamp(42px,4.6vw,58px);height:clamp(42px,4.6vw,58px);border-radius:50%;background:var(--ink);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mshop{border:0;background:none;font:600 clamp(17px,2vw,22px) 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer;padding:6px 0}
+.mpara{font:500 clamp(15px,2vw,22px)/1.58 'Manrope',Arial,sans-serif;max-width:36em;margin-top:34px}
+.mpara a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+.bar{flex-wrap:wrap}.sq{min-width:200px}
+.mbox{max-height:90vh;max-height:90dvh;overflow:auto}
+.lh small{font-size:clamp(15px,2vw,20px)}
+.about p{font-size:clamp(17px,2.2vw,20px)}
+@media(max-width:1199px){.mhero{display:block}#wrap{display:none}}
+@media(min-width:641px){.mh{font-size:min(10.5vw,120px)}.mbody{grid-template-columns:1.1fr .9fr;gap:3vw;align-items:end;padding-top:56px}.mbk{width:100%}.mtxt{padding-bottom:48px}}
+@media(max-width:640px){
+ .mbar{height:64px}.mi{width:48px}.mbtn{margin:0 10px;padding:9px 16px;font-size:15px}
+ #land{padding-top:44px}.sec{margin-bottom:64px}
+ .lh{margin-bottom:26px;padding-top:20px}.lnk{font-size:16px;padding:11px 20px}
+ .cats{grid-template-columns:1fr 1fr;gap:24px 20px}.cbox{min-height:190px;padding:18px;box-shadow:6px 0 0 #000}.bdg{width:44px;height:44px}.bdg svg{width:20px;height:20px}.ct{font-size:clamp(18px,6vw,28px)}.cn{font-size:15px}
+ .grid,#lsingles,.combos{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}
+ .cover{padding:12px;font-size:clamp(15px,4.8vw,22px);box-shadow:5px 0 0 #000}
+ .meta{font-size:14px;margin:10px 0 8px}.pr{font-size:15px}.add{width:100%;padding:10px 12px;font-size:14px}
+ .vbody{padding-top:22px}.vback{padding:8px 14px;font-size:14px}
+ .mbox{padding:24px 20px}.mbox h2{font-size:26px}
+ .fcart{padding:12px 18px;font-size:15px}.lf{font-size:14px}.fb{font-size:16px}
+ .crow{flex-wrap:wrap}
+}
+.cbox{container-type:inline-size;min-width:0}
+.cbox .ct{display:block;max-width:100%;font-size:clamp(16px,13.5cqw,52px);overflow-wrap:anywhere}
+.cbox .cn{max-width:100%}
+</style>
+</head>
+<body>
+<header class="mhero" id="mhero">
+ <nav class="mnav" id="mnav">
+  <div class="mbar">
+   <svg data-go="home" aria-label="Home" width="46" height="42" viewBox="0 0 80 70" fill="none" stroke="#1c1c1c" stroke-width="3.4"><circle cx="32" cy="27" r="17"/><rect x="32" y="25" width="31" height="31"/></svg>
+   <span class="sp"></span>
+   <button class="mi" data-act="search" aria-label="Search"><svg width="26" height="26" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="2"><circle cx="16" cy="16" r="12"/><path d="M25 25l4 4" stroke-linecap="round"/></svg></button>
+   <button class="mbtn" data-act="signup">Sign up</button>
+   <button class="mi" data-act="menu" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
+  </div>
+  <div class="mpanel"><button data-go="shop">Shop</button><button data-go="blog">Blog</button><button data-go="about">About us</button><button data-go="team">Team</button></div>
+ </nav>
+ <div class="mbody">
+  <div class="mtxt">
+   <div class="meyebrow" data-go="shop" tabindex="0" role="link">BEST CHOICE</div>
+   <div class="mh" data-go="shop" tabindex="0" role="link" aria-label="Books for all"><span class="pl"></span><span class="t" style="left:0;top:0">B</span><span class="t" style="left:1.418em;top:0">OKS</span><span class="t" style="left:0;top:.903em">F</span><span class="t" style="left:1.546em;top:.903em">R ALL</span></div>
+   <div class="mrow">
+    <form class="mform" id="qform2"><input id="q2" type="text" placeholder="Enter" autocomplete="off" aria-label="Search books"><button class="mgo" type="submit" aria-label="Search books"><svg width="24" height="17" viewBox="0 0 26 18" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h21M16 2l7 7-7 7"/></svg></button></form>
+    <button class="mshop" data-go="shop">Go to shop</button>
+   </div>
+   <p class="mpara">Regular reading allows you to better formulate your own thoughts. Our <a href="#team">team of professionals</a> will always help you make up your mind and find a book for fun activities.</p>
+  </div>
+  <div class="mbk" id="mbk"></div>
+ </div>
+</header>
+<div id="wrap"><div id="stage">
+
+  <!-- logo -->
+  <svg class="abs" data-go="home" aria-label="Home" style="left:110px;top:40px" width="80" height="70" viewBox="0 0 80 70" fill="none" stroke="#1c1c1c" stroke-width="3.4">
+    <circle cx="32" cy="27" r="17"/><rect x="32" y="25" width="31" height="31"/>
+  </svg>
+
+  <div class="abs vdiv" style="left:250px"></div>
+  <div class="abs link" data-go="shop" style="left:330px">Shop</div>
+  <div class="abs vdiv" style="left:412px"></div>
+  <div class="abs link" data-go="blog" style="left:488px">Blog</div>
+  <div class="abs vdiv" style="left:567px"></div>
+  <div class="abs link" data-go="about" style="left:666px">About us</div>
+  <div class="abs vdiv" style="left:767px"></div>
+  <div class="abs link" data-go="team" style="left:848px">Team</div>
+  <div class="abs vdiv" style="left:1399px"></div>
+  <svg class="abs" data-act="search" aria-label="Search" style="left:1451px;top:52px" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="1.6"><circle cx="16" cy="16" r="12"/><path d="M25 25l3 3" stroke-linecap="round"/></svg>
+  <div class="abs vdiv" style="left:1537px"></div>
+  <div class="abs btn" data-act="signup">Sign up</div>
+  <div class="abs nav-line"></div>
+
+  <div class="abs eyebrow">BEST CHOICE</div>
+
+  <div class="abs pill"></div>
+  <div class="abs h" style="left:136px;top:340px">B</div>
+  <div class="abs h" style="left:414px;top:340px">OKS</div>
+  <div class="abs h" style="left:136px;top:517px">F</div>
+  <div class="abs h" style="left:439px;top:517px">R ALL</div>
+
+  <form class="abs input" id="qform"><input id="q" type="text" placeholder="Enter" autocomplete="off" aria-label="Search books"></form>
+  <button class="abs go" form="qform" type="submit" aria-label="Search books"><svg width="26" height="18" viewBox="0 0 26 18" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h21M16 2l7 7-7 7"/></svg></button>
+  <div class="abs shop" data-go="shop">Go to shop</div>
+
+  <p class="abs para">Regular reading allows you to better formulate your own thoughts. Our <a href="#team">team of professionals</a> will always help you make up your mind and find a book for fun activities.</p>
+
+  <svg class="books" width="1906" height="1220" viewBox="0 0 1906 1220">
+    <defs>
+      <filter id="grain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+        <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2.2 1.25" result="speck"/>
+        <feComposite in="speck" in2="SourceGraphic" operator="in" result="s2"/>
+        <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 0.95" result="dark"/>
+        <feComposite in="dark" in2="SourceGraphic" operator="in" result="d2"/>
+        <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="s2"/><feMergeNode in="d2"/></feMerge>
+      </filter>
+      <path id="star" d="M0,-20 Q2.5,-2.5 20,0 Q2.5,2.5 0,20 Q-2.5,2.5 -20,0 Q-2.5,-2.5 0,-20Z"/>
+    </defs>
+
+    <!-- shadows -->
+    <polygon fill="#000" points="1371,433 1379,453 1085,1220 1071,1220"/>
+    <polygon fill="#000" points="1580,357 1592,365 1439,1220 1425,1220"/>
+    <polygon fill="#000" points="1806,248 1819,257 1761,1220 1748,1220"/>
+
+    <!-- books -->
+    <polygon filter="url(#grain)" fill="#fd7b2e" points="1213,374 1371,433 1071,1220 888,1220"/>
+    <polygon filter="url(#grain)" fill="#2a4577" points="1412,321 1580,357 1425,1220 1251,1220"/>
+    <polygon filter="url(#grain)" fill="#fbbc58" points="1635,234 1806,248 1748,1220 1576,1220"/>
+
+    <!-- badges -->
+    <circle cx="1263" cy="482" r="30" fill="#fff"/><use href="#star" x="1263" y="482" fill="#1c1c1c" transform="rotate(-15 1263 482)"/>
+    <circle cx="1483" cy="419" r="30" fill="#fff"/><use href="#star" x="1483" y="419" fill="#1c1c1c" transform="rotate(-10 1483 419)"/>
+    <circle cx="1721" cy="313" r="30" fill="#fff"/><use href="#star" x="1721" y="313" fill="#1c1c1c" transform="rotate(-5 1721 313)"/>
+
+    <!-- labels -->
+    <text class="bt" transform="translate(1030,1140) rotate(-65)">CLASSIC</text>
+    <text class="bt" transform="translate(1352,1190) rotate(-76)">MODERN ART</text>
+    <text class="bt" transform="translate(1700,1145) rotate(-87)">NONFICTION</text>
+
+    <!-- clickable book areas -->
+    <polygon class="hit" data-cat="classic" aria-label="Classic books" points="1213,374 1371,433 1085,1220 888,1220"/>
+    <polygon class="hit" data-cat="modern" aria-label="Modern Art books" points="1412,321 1580,357 1439,1220 1251,1220"/>
+    <polygon class="hit" data-cat="nonfiction" aria-label="Nonfiction books" points="1635,234 1806,248 1761,1220 1576,1220"/>
+  </svg>
+
+</div></div>
+<script>
+(function(){
+  var s=document.getElementById('stage'),w=document.getElementById('wrap');
+  function fit(){var k=window.innerWidth/1906;s.style.transform='scale('+k+')';w.style.height=(1220*k)+'px';}
+  window.addEventListener('resize',fit);fit();
+})();
+</script>
+<main id="land">
+<section class="sec"><div class="lh"><div><small>SHOP BY CATEGORY</small><h2>Pick a shelf</h2></div></div><div class="cats" id="lcats"></div></section>
+<section class="sec"><div class="lh"><div><small>SINGLE BOOKS</small><h2>Old books,<br>new stories</h2></div><button class="lnk" data-go="shop">Browse all books</button></div><div class="grid" id="lsingles"></div></section>
+<section class="sec"><div class="lh"><div><small>COMBO DEALS</small><h2>More books,<br>less money</h2></div><button class="lnk" data-cat="combo">See all combos</button></div><div class="combos" id="lcombos"></div></section>
+<footer class="lf"><nav><button class="fb" data-go="shop">Shop</button><button class="fb" data-go="blog">Blog</button><button class="fb" data-go="about">About us</button><button class="fb" data-go="team">Team</button><button class="fb" data-act="signup">Sign up</button></nav><div>© 2026 Books for All · Old books, singles and combos</div></footer>
+</main>
+<button class="fcart" data-act="cart">Cart (<b class="cc">0</b>)</button>
+<div id="view" hidden><div class="vtop"><button class="vback" data-go="home">← Back</button><div class="vtitle" id="vt"></div></div><div class="vbody" id="vb"></div></div>
+<div id="modal" hidden><div class="mbox"><button class="mx" aria-label="Close">×</button><div id="mc"></div></div></div>
+<div id="toast" role="status"></div>
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)};
+var view=$('#view'),vb=$('#vb'),vt=$('#vt'),modal=$('#modal'),mc=$('#mc'),toast=$('#toast'),tt;
+var st={cat:'all',q:'',cart:0,items:[],user:null};
+var COL={classic:'#fd7b2e',modern:'#2a4577',nonfiction:'#fbbc58',combo:'#1c1c1c'};
+var CUR='৳';
+var B=[
+{t:'Pride and Prejudice',a:'Jane Austen',c:'classic',p:220,cond:'Good'},{t:'Great Expectations',a:'Charles Dickens',c:'classic',p:260,cond:'Fair'},{t:'Moby-Dick',a:'Herman Melville',c:'classic',p:280,cond:'Good'},{t:'Jane Eyre',a:'Charlotte Brontë',c:'classic',p:240,cond:'Like new'},
+{t:'Shapes of Now',a:'Lena Ortiz',c:'modern',p:520,cond:'Like new'},{t:'Colour in Motion',a:'Daniel Reyes',c:'modern',p:580,cond:'Good'},{t:'The Bold Line',a:'Mira Kapoor',c:'modern',p:480,cond:'Good'},{t:'Gallery Without Walls',a:'Tom Hale',c:'modern',p:540,cond:'Fair'},
+{t:'Deep Habits',a:'Sara Quinn',c:'nonfiction',p:320,cond:'Like new'},{t:'The Quiet Economy',a:'Omar Siddiq',c:'nonfiction',p:350,cond:'Good'},{t:'Mapping the Mind',a:'Priya Nair',c:'nonfiction',p:380,cond:'Good'},{t:'Small Steps',a:'Ben Carter',c:'nonfiction',p:290,cond:'Fair'},
+{t:'Classic Starter Combo',a:'3 books',c:'combo',p:620,old:740,cond:'Mixed condition',items:[0,2,3]},{t:'Art Lover Pack',a:'3 books',c:'combo',p:1290,old:1580,cond:'Mixed condition',items:[4,5,6]},{t:'Think Better Bundle',a:'3 books',c:'combo',p:820,old:990,cond:'Mixed condition',items:[8,10,11]}];
+function sync(){st.cart=st.items.length;document.querySelectorAll('.cc').forEach(function(e){e.textContent=st.cart})}
+function cover(b){return '<div class="cover" style="background-color:'+COL[b.c]+';color:'+(b.c==='nonfiction'?'#1c1c1c':'#fff')+'">'+(b.img?'<img src="'+esc(b.img)+'" alt="'+esc(b.t)+'" loading="lazy" onerror="this.remove()">':'')+(b.items?'<span class="cb">COMBO</span>':'')+esc(b.t)+'</div>'}
+function card(b){var i=B.indexOf(b);return '<div class="pc"><button class="pcb" data-act="detail" data-i="'+i+'">'+cover(b)+'<div class="meta"><b>'+esc(b.t)+'</b><br>'+(b.items?b.items.length+' books':esc(b.a))+' · '+esc(b.cond)+'</div></button><div class="pr"><span><b>'+CUR+b.p+'</b>'+(b.old?' <s>'+CUR+b.old+'</s>':'')+'</span><button class="add" data-add="'+i+'">Add to cart</button></div></div>'}
+function ccard(b){var i=B.indexOf(b);return '<div class="cmb"><div><span class="cb2">COMBO · SAVE '+Math.round((1-b.p/b.old)*100)+'%</span><h3>'+esc(b.t)+'</h3></div><ul>'+b.items.map(function(k){return '<li>'+esc(B[k].t)+' <span>'+esc(B[k].a)+'</span></li>'}).join('')+'</ul><div class="pr"><span><b>'+CUR+b.p+'</b> <s>'+CUR+b.old+'</s></span><button class="add" data-add="'+i+'">Add combo</button></div></div>'}
+function land(){
+ var n=function(c){return B.filter(function(b){return b.c===c}).length};
+ var C=[['classic','Classic',n('classic')+' books'],['modern','Modern Art',n('modern')+' books'],['nonfiction','Nonfiction',n('nonfiction')+' books'],['combo','Combos',n('combo')+' deals']];
+ $('#lcats').innerHTML=C.map(function(c){return '<button class="cbox" data-cat="'+c[0]+'" style="background-color:'+COL[c[0]]+';color:'+(c[0]==='nonfiction'?'#1c1c1c':'#fff')+'"><span class="bdg"><svg width="28" height="28" viewBox="-22 -22 44 44"><path d="M0,-20 Q2.5,-2.5 20,0 Q2.5,2.5 0,20 Q-2.5,2.5 -20,0 Q-2.5,-2.5 0,-20Z" fill="#1c1c1c"/></svg></span><span class="ct">'+c[1]+'</span><span class="cn">'+c[2]+' →</span></button>'}).join('');
+ $('#lsingles').innerHTML=[0,1,4,5,8,9,3,6].map(function(i){return card(B[i])}).join('');
+ $('#lcombos').innerHTML=B.filter(function(b){return b.items}).map(card).join('');
+}
+function detail(x){var i=+x.dataset.i,b=B[i];openM('<h2>'+esc(b.t)+'</h2><p style="margin-bottom:12px">'+(b.items?'Combo · '+b.items.length+' books':esc(b.a))+' · '+esc(b.cond)+'</p>'+(b.items?'<ul class="il">'+b.items.map(function(k){return '<li>'+esc(B[k].t)+' — '+esc(B[k].a)+'</li>'}).join('')+'</ul>':'<p style="margin-bottom:12px">Pre-loved copy, sold as a single book.</p>')+'<p style="font-size:24px;margin:10px 0"><b>'+CUR+b.p+'</b>'+(b.old?' <s>'+CUR+b.old+'</s>':'')+'</p><button class="sub" data-add="'+i+'">Add to cart</button>')}
+function cartM(){
+ if(!st.items.length){openM('<h2>Your cart</h2><p style="margin-bottom:10px">Your cart is empty. Add some books first.</p><button class="sub" data-go="shop">Browse books</button>');return}
+ var t=0,rows=st.items.map(function(i,k){var b=B[i];t+=b.p;return '<div class="crow"><span>'+esc(b.t)+(b.items?' <small>(combo)</small>':'')+'</span><b>'+CUR+b.p+'</b><button class="rm" data-act="rm" data-k="'+k+'" aria-label="Remove">×</button></div>'}).join('');
+ openM('<h2>Your cart</h2>'+rows+'<div class="crow tot"><span>Total</span><b>'+CUR+t+'</b></div><button class="sub" data-act="checkout">Checkout</button>');
+}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function say(m){toast.textContent=m;toast.className='on';clearTimeout(tt);tt=setTimeout(function(){toast.className=''},2200)}
+function go(r){var m=document.getElementById('mnav');if(m)m.classList.remove('open');if(location.hash==='#'+r)route();else location.hash=r}
+function openM(h){mc.innerHTML=h;modal.hidden=false;var i=$('input,textarea',mc);if(i)i.focus()}
+function closeM(){modal.hidden=true}
+function shop(){
+ vb.innerHTML='<div class="bar"><input class="sq" id="sq" placeholder="Search books or authors" autocomplete="off"><button class="chip" data-act="cart">Cart (<b class="cc">'+st.cart+'</b>)</button></div><div class="chips">'+[['all','All'],['classic','Classic'],['modern','Modern Art'],['nonfiction','Nonfiction'],['combo','Combos']].map(function(c){return '<button class="chip'+(st.cat===c[0]?' on':'')+'" data-cat="'+c[0]+'">'+c[1]+'</button>'}).join('')+'</div><div class="grid" id="grid"></div>';
+ $('#sq').value=st.q;draw();
+}
+function draw(){
+ var q=st.q.toLowerCase(),l=B.filter(function(b){return (st.cat==='all'||b.c===st.cat)&&(b.t+' '+b.a).toLowerCase().indexOf(q)>-1});
+ $('#grid').innerHTML=l.length?l.map(card).join(''):'<p>No books found. Try another search.</p>';
+}
+function blog(){
+ var P=[['Nov 2, 2026','Why regular reading sharpens your writing','Reading widely gives you more words, more structures and more ways to explain an idea. Even twenty minutes a day changes how clearly you can put your own thoughts on paper.'],['Oct 19, 2026','Five classics worth starting this winter','If the classics feel intimidating, begin with shorter novels and read a chapter a night. Our team picks start with the most readable ones.'],['Oct 5, 2026','How to read more nonfiction without burning out','Pick one idea per book, keep notes in your own words, and stop when a book stops serving you. Finishing is not the goal; learning is.']];
+ vb.innerHTML=P.map(function(p){return '<div class="post" tabindex="0"><small>'+p[0]+'</small><h3>'+p[1]+'</h3><p>'+p[2]+'</p></div>'}).join('');
+}
+function about(){
+ vb.innerHTML='<div class="about"><p>Books for All is a small shop built on one idea: regular reading helps you formulate your own thoughts.</p><p>We stock classics, modern art books and nonfiction, and our team of professionals is always ready to help you make up your mind and find a book for fun activities.</p><button class="add" data-go="shop">Go to shop</button></div>';
+}
+function team(){
+ var T=[['Alina Rahman','Head curator','#fd7b2e'],['Marcus Lee','Classics specialist','#2a4577'],['Sofia Alvarez','Art book editor','#fbbc58'],['Tariq Hossain','Nonfiction advisor','#1c1c1c']];
+ vb.innerHTML='<div class="grid">'+T.map(function(m){var ini=m[0].split(' ').map(function(w){return w[0]}).join('');return '<button class="tm" data-act="msg" data-n="'+m[0]+'"><div class="av" style="background:'+m[2]+';color:'+(m[2]==='#fbbc58'?'#1c1c1c':'#fff')+'">'+ini+'</div><b>'+m[0]+'</b><br>'+m[1]+'<br><small>Click to send a message</small></button>'}).join('')+'</div>';
+}
+var V={shop:['Shop',shop],blog:['Blog',blog],about:['About us',about],team:['Team',team]};
+function route(){
+ var v=V[location.hash.slice(1)];
+ if(!v){view.hidden=true;document.body.style.overflow='';return}
+ vt.textContent=v[0];v[1]();view.hidden=false;view.scrollTop=0;document.body.style.overflow='hidden';
+}
+function setBtn(t){document.querySelectorAll('.btn,.mbtn').forEach(function(b){b.textContent=t})}
+var acts={
+ cart:cartM,detail:detail,menu:function(){$('#mnav').classList.toggle('open')},
+ rm:function(x){st.items.splice(+x.dataset.k,1);sync();cartM()},
+ checkout:function(){openM('<h2>Checkout</h2><form id="of"><input class="fi" name="nm" placeholder="Full name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><textarea class="fi" name="ad" rows="3" placeholder="Delivery address" required></textarea><button class="sub">Place order</button></form>')},
+ search:function(){openM('<h2>Search</h2><form id="sf"><input class="fi" name="q" placeholder="Search books or authors" autocomplete="off"><button class="sub">Search</button></form>')},
+ signup:function(){
+  if(st.user)openM('<h2>Your account</h2><p style="margin-bottom:10px">Signed in as '+esc(st.user)+'.</p><button class="sub" data-act="logout">Log out</button>');
+  else openM('<h2>Sign up</h2><form id="su"><input class="fi" name="nm" placeholder="Full name" required autocomplete="name"><input class="fi" name="em" type="email" placeholder="Email" required autocomplete="email"><input class="fi" name="pw" type="password" placeholder="Password (6+ characters)" minlength="6" required autocomplete="new-password"><button class="sub">Create account</button></form>');
+ },
+ logout:function(){st.user=null;setBtn('Sign up');closeM();say('Logged out')},
+ msg:function(x){openM('<h2>Message '+esc(x.dataset.n.split(' ')[0])+'</h2><form id="mf" data-n="'+esc(x.dataset.n)+'"><textarea class="fi" rows="4" required placeholder="Your message"></textarea><button class="sub">Send</button></form>')}
+};
+document.addEventListener('click',function(e){
+ var t=e.target,x;
+ if(t===modal||t.closest('.mx')){closeM();return}
+ if(x=t.closest('[data-add]')){st.items.push(+x.dataset.add);sync();say('Added “'+B[x.dataset.add].t+'” to cart');return}
+ if(x=t.closest('[data-cat]')){st.cat=x.dataset.cat;if(x.classList.contains('hit')||x.closest('#land')){st.q='';go('shop')}else shop();return}
+ if(x=t.closest('[data-go]')){closeM();go(x.dataset.go);return}
+ if(x=t.closest('[data-act]')){acts[x.dataset.act](x);return}
+ if(x=t.closest('.post'))x.classList.toggle('open');
+});
+document.addEventListener('input',function(e){if(e.target.id==='sq'){st.q=e.target.value;draw()}});
+document.addEventListener('submit',function(e){
+ e.preventDefault();var f=e.target;
+ if(f.id==='qform'||f.id==='qform2'){st.q=f.querySelector('input').value.trim();st.cat='all';go('shop')}
+ else if(f.id==='sf'){st.q=f.elements.q.value.trim();st.cat='all';closeM();go('shop')}
+ else if(f.id==='su'){var n=f.elements.nm.value.trim();st.user=n;setBtn('Hi, '+n.split(' ')[0]);closeM();say('Welcome, '+n+'!')}
+ else if(f.id==='of'){var on=f.elements.nm.value.trim();st.items=[];sync();closeM();say('Order request received, '+on.split(' ')[0]+'!')}
+ else if(f.id==='mf'){closeM();say('Message sent to '+f.dataset.n)}
+});
+document.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){if(!modal.hidden)closeM();else if(!view.hidden)go('home')}
+ else if(e.key==='Enter'&&e.target.matches&&e.target.matches('#stage [data-go],#stage [data-act],#stage .hit,.mbooks .hit,.mh,.meyebrow,.post')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}))}
+});
+document.querySelectorAll('#stage .eyebrow,#stage .h,#stage .pill').forEach(function(n){n.setAttribute('data-go','shop')});
+document.querySelectorAll('#stage [data-go],#stage [data-act],#stage .hit').forEach(function(n){n.setAttribute('tabindex','0');n.setAttribute('role',n.hasAttribute('data-go')?'link':'button')});
+(function(){var s=$('svg.books'),m=$('#mbk');if(!s||!m)return;var c=s.cloneNode(true);c.innerHTML=c.innerHTML.replace(/grain/g,'grain2').replace(/id="star"/g,'id="star2"').replace(/#star"/g,'#star2"');c.setAttribute('class','mbooks');c.setAttribute('viewBox','870 210 970 1010');c.removeAttribute('width');c.removeAttribute('height');m.appendChild(c);c.querySelectorAll('.hit').forEach(function(n){n.setAttribute('tabindex','0');n.setAttribute('role','button')})})();
+land();window.addEventListener('hashchange',route);route();
+})();
+</script>
+</body>
+</html>

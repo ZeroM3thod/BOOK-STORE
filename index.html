@@ -131,7 +131,8 @@ svg.books{pointer-events:none}
 .lh small{font-size:clamp(15px,2vw,20px)}
 .about p{font-size:clamp(17px,2.2vw,20px)}
 @media(max-width:1199px){.mhero{display:block}#wrap{display:none}}
-@media(min-width:641px){.mh{font-size:min(10.5vw,120px)}.mbody{grid-template-columns:1.1fr .9fr;gap:3vw;align-items:end;padding-top:56px}.mbk{width:100%}.mtxt{padding-bottom:48px}}
+@media(min-width:641px){.mh{font-size:min(10.5vw,120px)}.mbody{padding-top:56px}}
+@media(min-width:900px){.mbody{grid-template-columns:1.1fr .9fr;gap:3vw;align-items:end}.mtxt{padding-bottom:48px}}
 @media(max-width:640px){
  .mbar{height:64px}.mi{width:48px}.mbtn{margin:0 10px;padding:9px 16px;font-size:15px}
  #land{padding-top:44px}.sec{margin-bottom:64px}
@@ -460,6 +461,82 @@ html.dk .nbtn{color:var(--bg)}
 @media(min-width:1200px){#view .vnavd{display:block;position:sticky;overflow:hidden;width:100%}}
 #vnav{position:absolute;top:0;left:0;width:1906px;height:133px;transform-origin:0 0;background:var(--bg);font-family:'Manrope','Helvetica Neue',Arial,sans-serif;color:var(--ink);overflow:hidden}
 @media(max-width:1199px){#view .vnavm{display:block}}
+
+/* ===== home page: small cards in a side-scrolling row (mobile + tablet) ===== */
+@media(max-width:1199px){
+ #land #lsingles,#land #loffers,#land .combos{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 10px 14px 0;scrollbar-width:none}
+ #land #lsingles::-webkit-scrollbar,#land #loffers::-webkit-scrollbar,#land .combos::-webkit-scrollbar{display:none}
+ #land .pc,#land .cmb{flex:0 0 calc((100% - 48px)/5);min-width:0;scroll-snap-align:start}
+ #land .cover{font-size:clamp(10px,1.5vw,14px);padding:8px;box-shadow:4px 0 0 #000}
+ #land .cb,#land .cb.of{top:6px;left:6px;padding:2px 7px;font-size:9px}
+ #land .cb.of{left:auto;right:6px}
+ #land .meta{font-size:11px;margin:8px 0 6px}
+ #land .pr{font-size:12px;gap:6px}
+ #land .add{width:100%;padding:7px 8px;font-size:11px}
+ #land .dl{font-size:10px}
+ #land .cmb{padding:10px;box-shadow:4px 0 0 #000}
+ #land .cmb h3{font-size:15px}
+ #land .cmb li{font-size:11px;padding:6px 0}
+ #land .cb2{font-size:9px;padding:3px 8px}
+}
+@media(max-width:900px){
+ #land .pc,#land .cmb{flex-basis:calc((100% - 36px)/4)}
+}
+@media(max-width:640px){
+ #land .pc,#land .cmb{flex-basis:calc((100% - 24px)/3.4)}
+}
+
+/* ===== book shelf physics ===== */
+g.bk{transform-origin:0 0;will-change:transform}
+svg.books,svg.mbooks{touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.hit:active{cursor:grabbing}
+.hit:focus:not(:focus-visible){outline:none}
+
+/* shelf runs edge to edge: the first and last book lean on the screen sides */
+.mbk{width:calc(100% + 10vw);margin:0 -5vw;max-width:none;overflow:hidden}
+@media(min-width:900px) and (max-width:1199px){.mbk{width:calc(100% + 5vw);margin:0 -5vw 0 0}}
+
+/* ===== footer ===== */
+.ft{background:var(--ink);color:var(--bg);font-family:'Manrope',Arial,sans-serif;margin-top:40px;box-shadow:0 -8px 0 var(--orange);position:relative;overflow:hidden;padding-bottom:env(safe-area-inset-bottom,0px)}
+.ft-in{max-width:1906px;margin:0 auto;padding:0 5vw}
+.ft button{font-family:inherit;cursor:pointer}
+.ft-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding:clamp(36px,5vw,72px) 0;border-bottom:2px solid var(--bg)}
+.ft-cta small{display:block;color:var(--orange);font-weight:700;font-size:clamp(14px,1.6vw,20px);margin-bottom:12px}
+.ft-cta h2{font:700 clamp(32px,5.2vw,80px)/.98 'Outfit',sans-serif;max-width:12em}
+.ft-btns{display:flex;flex-wrap:wrap;gap:12px}
+.ft-b{border:0;border-radius:36px;padding:15px 28px;font:700 17px 'Manrope',Arial,sans-serif;background:var(--orange);color:#fff;transition:transform .16s,box-shadow .2s}
+.ft-b.o{background:none;color:var(--bg);border:1.5px solid var(--bg)}
+@media(hover:hover){.ft-b:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.3)}}
+.ft-b:active{transform:scale(.95)}
+.ft-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr)) minmax(0,1.2fr);gap:40px;padding:clamp(36px,5vw,64px) 0}
+.ft-brand p{font-size:15px;line-height:1.65;max-width:26em;margin:14px 0 20px;opacity:.85}
+.ft-logo{font:800 28px/1 'Outfit',sans-serif;display:flex;align-items:center;gap:10px}
+.ft-logo svg{flex:none}
+.ft-nl{display:flex;align-items:center;border:1.5px solid var(--bg);border-radius:36px;padding:5px 5px 5px 20px;max-width:380px}
+.ft-nl input{flex:1;min-width:0;border:0;outline:0;background:none;color:var(--bg);font:500 15px 'Manrope',Arial,sans-serif}
+.ft-nl input::placeholder{color:var(--bg);opacity:.6}
+.ft-nl button{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center}
+.ft h4{font:700 15px 'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.ft-col{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.ft-col button{border:0;background:none;color:var(--bg);font:500 16px 'Manrope',Arial,sans-serif;padding:6px 0;text-align:left;position:relative;transition:color .2s,transform .2s}
+.ft-col button:hover{color:var(--orange);transform:translateX(4px)}
+.ft-info{display:flex;flex-direction:column;gap:14px;font-size:15px;line-height:1.5}
+.ft-info div{display:flex;gap:12px;align-items:flex-start}
+.ft-info svg{flex:none;margin-top:2px;color:var(--orange)}
+.ft-info b{display:block;font-weight:700}
+.ft-info span{opacity:.8}
+.ft-trust{display:flex;flex-wrap:wrap;gap:10px;padding:0 0 clamp(28px,4vw,48px)}
+.ft-trust span{border:1.5px solid var(--bg);border-radius:30px;padding:8px 16px;font:600 14px 'Manrope',Arial,sans-serif;display:inline-flex;align-items:center;gap:8px}
+.ft-trust i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.ft-mark{font:800 clamp(56px,17.5vw,340px)/.78 'Outfit',sans-serif;letter-spacing:-.02em;white-space:nowrap;text-transform:uppercase;text-align:center;opacity:.12;user-select:none;margin:0 -2vw;padding-top:.04em;pointer-events:none}
+.ft-bot{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;border-top:2px solid var(--bg);padding:22px 0 26px;font-size:14px;font-weight:500}
+.ft-bot nav{display:flex;flex-wrap:wrap;gap:6px 24px}
+.ft-bot button{border:0;background:none;color:var(--bg);font:600 14px 'Manrope',Arial,sans-serif;padding:4px 0}
+.ft-bot button:hover{color:var(--orange)}
+.ft-top{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--bg)!important;border-radius:30px;padding:8px 16px!important}
+.ft-top:hover{background:var(--bg);color:var(--ink)!important}
+@media(max-width:1199px){.ft-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ft-brand{grid-column:1/-1}.ft-contact{grid-column:span 1}}
+@media(max-width:640px){.ft-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}.ft-contact{grid-column:1/-1}.ft-b{flex:1 1 100%;text-align:center}.ft-bot{padding-bottom:84px}}
 </style>
 </head>
 <body>
@@ -595,30 +672,49 @@ html.dk .nbtn{color:var(--bg)}
       <path id="star" d="M0,-20 Q2.5,-2.5 20,0 Q2.5,2.5 0,20 Q-2.5,2.5 -20,0 Q-2.5,-2.5 0,-20Z"/>
     </defs>
 
-    <!-- shadows -->
-    <polygon fill="#000" points="1371,433 1379,453 1085,1220 1071,1220"/>
-    <polygon fill="#000" points="1580,357 1592,365 1439,1220 1425,1220"/>
-    <polygon fill="#000" points="1806,248 1819,257 1761,1220 1748,1220"/>
-
-    <!-- books -->
-    <polygon filter="url(#grain)" fill="#fd7b2e" points="1213,374 1371,433 1071,1220 888,1220"/>
-    <polygon filter="url(#grain)" fill="#2a4577" points="1412,321 1580,357 1425,1220 1251,1220"/>
-    <polygon filter="url(#grain)" fill="#fbbc58" points="1635,234 1806,248 1748,1220 1576,1220"/>
-
-    <!-- badges -->
-    <circle cx="1263" cy="482" r="30" fill="#fff"/><use href="#star" x="1263" y="482" fill="#1c1c1c" transform="rotate(-15 1263 482)"/>
-    <circle cx="1483" cy="419" r="30" fill="#fff"/><use href="#star" x="1483" y="419" fill="#1c1c1c" transform="rotate(-10 1483 419)"/>
-    <circle cx="1721" cy="313" r="30" fill="#fff"/><use href="#star" x="1721" y="313" fill="#1c1c1c" transform="rotate(-5 1721 313)"/>
-
-    <!-- labels -->
-    <text class="bt" transform="translate(1030,1140) rotate(-65)">CLASSIC</text>
-    <text class="bt" transform="translate(1352,1190) rotate(-76)">MODERN ART</text>
-    <text class="bt" transform="translate(1700,1145) rotate(-87)">NONFICTION</text>
-
-    <!-- clickable book areas -->
-    <polygon class="hit" data-cat="classic" aria-label="Classic books" points="1213,374 1371,433 1085,1220 888,1220"/>
-    <polygon class="hit" data-cat="modern" aria-label="Modern Art books" points="1412,321 1580,357 1439,1220 1251,1220"/>
-    <polygon class="hit" data-cat="nonfiction" aria-label="Nonfiction books" points="1635,234 1806,248 1761,1220 1576,1220"/>
+    <!-- books: six identical books, each in its own group so it can move on its own -->
+    <g class="bk" data-px="954" data-top="294">
+      <polygon fill="#000" points="1181,306 1191,328 1015,1330 1001,1330"/>
+      <polygon filter="url(#grain)" fill="#fd7b2e" points="1053,283 1181,306 1001,1330 873,1307"/>
+      <circle cx="1101" cy="385" r="30" fill="#fff"/><use href="#star" x="1101" y="385" fill="#1c1c1c" transform="rotate(-15 1101 385)"/>
+      <text class="bt" transform="translate(988,1135) rotate(-80)">CLASSIC</text>
+      <polygon class="hit" data-cat="classic" aria-label="Classic books" points="1053,283 1195,328 1015,1330 873,1307"/>
+    </g>
+    <g class="bk" data-px="1128" data-top="289">
+      <polygon fill="#000" points="1323,298 1333,320 1193,1328 1179,1328"/>
+      <polygon filter="url(#grain)" fill="#fbbc58" points="1195,280 1323,298 1179,1328 1050,1310"/>
+      <circle cx="1246" cy="380" r="30" fill="#fff"/><use href="#star" x="1246" y="380" fill="#1c1c1c" transform="rotate(-12 1246 380)"/>
+      <text class="bt" transform="translate(1160,1134) rotate(-82)">COMBO</text>
+      <polygon class="hit" data-cat="combo" aria-label="Combo deals" points="1195,280 1337,320 1193,1328 1050,1310"/>
+    </g>
+    <g class="bk" data-px="1302" data-top="285">
+      <polygon fill="#000" points="1465,292 1475,314 1371,1326 1357,1326"/>
+      <polygon filter="url(#grain)" fill="#2a4577" points="1336,278 1465,292 1357,1326 1227,1313"/>
+      <circle cx="1391" cy="377" r="30" fill="#fff"/><use href="#star" x="1391" y="377" fill="#1c1c1c" transform="rotate(-9 1391 377)"/>
+      <text class="bt" transform="translate(1331,1132) rotate(-84)">MODERN ART</text>
+      <polygon class="hit" data-cat="modern" aria-label="Modern Art books" points="1336,278 1479,314 1371,1326 1227,1313"/>
+    </g>
+    <g class="bk" data-px="1477" data-top="282">
+      <polygon fill="#000" points="1607,287 1617,309 1548,1324 1534,1324"/>
+      <polygon filter="url(#grain)" fill="#fd7b2e" points="1477,278 1607,287 1534,1324 1405,1315"/>
+      <circle cx="1536" cy="374" r="30" fill="#fff"/><use href="#star" x="1536" y="374" fill="#1c1c1c" transform="rotate(-6 1536 374)"/>
+      <text class="bt" transform="translate(1502,1132) rotate(-86)">ALL BOOKS</text>
+      <polygon class="hit" data-cat="all" aria-label="All books" points="1477,278 1621,309 1548,1324 1405,1315"/>
+    </g>
+    <g class="bk" data-px="1651" data-top="281">
+      <polygon fill="#000" points="1749,283 1759,305 1726,1322 1712,1322"/>
+      <polygon filter="url(#grain)" fill="#fbbc58" points="1619,278 1749,283 1712,1322 1582,1318"/>
+      <circle cx="1680" cy="373" r="30" fill="#fff"/><use href="#star" x="1680" y="373" fill="#1c1c1c" transform="rotate(-3 1680 373)"/>
+      <text class="bt" transform="translate(1673,1131) rotate(-88)">NONFICTION</text>
+      <polygon class="hit" data-cat="nonfiction" aria-label="Nonfiction books" points="1619,278 1763,305 1726,1322 1582,1318"/>
+    </g>
+    <g class="bk" data-px="1825" data-top="280">
+      <polygon fill="#000" points="1890,280 1900,302 1904,1320 1890,1320"/>
+      <polygon filter="url(#grain)" fill="#2a4577" points="1760,280 1890,280 1890,1320 1760,1320"/>
+      <circle cx="1825" cy="372" r="30" fill="#fff"/><use href="#star" x="1825" y="372" fill="#1c1c1c" transform="rotate(0 1825 372)"/>
+      <text class="bt" transform="translate(1844,1130) rotate(-90)">COACHING</text>
+      <polygon class="hit" data-act="coach" aria-label="Admission coaching" points="1760,280 1904,302 1904,1320 1760,1320"/>
+    </g>
   </svg>
 
 </div></div>
@@ -634,8 +730,22 @@ html.dk .nbtn{color:var(--bg)}
 <section class="sec"><div class="lh"><div><small>SHOP BY CATEGORY</small><h2>Pick a shelf</h2></div></div><div class="cats" id="lcats"></div></section>
 <section class="sec"><div class="lh"><div><small>SINGLE BOOKS</small><h2>Old books,<br>new stories</h2></div><button class="lnk" data-go="shop">Browse all books</button></div><div class="grid" id="lsingles"></div></section>
 <section class="sec"><div class="lh"><div><small>COMBO DEALS</small><h2>More books,<br>less money</h2></div><button class="lnk" data-cat="combo">See all combos</button></div><div class="combos" id="lcombos"></div></section>
-<footer class="lf"><nav><button class="fb" data-go="shop">Shop</button><button class="fb" data-go="blog">Blog</button><button class="fb" data-go="about">About us</button><button class="fb" data-go="team">Team</button><button class="fb" data-act="signup">Sign up</button></nav><div>© 2026 Books for All · Old books, singles and combos</div></footer>
+
 </main>
+<footer class="ft" id="footer"><div class="ft-in">
+<div class="ft-cta"><div><small>GOT BOOKS GATHERING DUST?</small><h2>Give a book a second life.</h2></div><div class="ft-btns"><button class="ft-b" data-act="sell">Post your old books</button><button class="ft-b o" data-act="donate">Donate books</button></div></div>
+<div class="ft-grid">
+<div class="ft-brand"><div class="ft-logo"><svg width="30" height="30" viewBox="-22 -22 44 44" aria-hidden="true"><path d="M0,-20 Q2.5,-2.5 20,0 Q2.5,2.5 0,20 Q-2.5,2.5 -20,0 Q-2.5,-2.5 0,-20Z" fill="#f47c2c"/></svg>Books for All</div><p>Old books, singles and combos at friendly prices. Every book has an honest condition grade, so you always know what you are getting.</p><form class="ft-nl" id="nlf"><input name="em" type="email" placeholder="Your email for new arrivals" required autocomplete="email" aria-label="Email for new arrivals"><button type="submit" aria-label="Subscribe"><svg width="20" height="14" viewBox="0 0 26 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h21M16 2l7 7-7 7"/></svg></button></form></div>
+<div><h4>Shop</h4><div class="ft-col"><button data-cat="all">All books</button><button data-cat="classic">Classic</button><button data-cat="modern">Modern Art</button><button data-cat="nonfiction">Nonfiction</button><button data-cat="combo">Combo deals</button></div></div>
+<div><h4>Company</h4><div class="ft-col"><button data-go="about">About us</button><button data-go="team">Team</button><button data-go="blog">Blog</button><button data-act="join">Join us</button></div></div>
+<div><h4>Help</h4><div class="ft-col"><button data-act="coach">Admission coaching</button><button data-act="donate">Donate books</button><button data-act="sell">Sell your books</button><button data-act="msg" data-n="our team" data-t="our team">Message us</button><button data-act="cart">Your cart</button></div></div>
+<div class="ft-contact"><h4>Store</h4><div class="ft-info"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><p><b>Books for All</b><span>Dhaka, Bangladesh</span></p></div><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg><p><b>Delivery</b><span>Across Bangladesh, 2–4 days</span></p></div><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg><p><b>Payment</b><span>Cash on delivery</span></p></div><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 108-8H7M7 1L4 4l3 3"/></svg><p><b>Returns</b><span>Within 7 days if not as described</span></p></div></div></div>
+</div>
+<div class="ft-trust"><span><i></i>Honest condition grades</span><span><i></i>Wrapped in paper with a protective sleeve</span><span><i></i>Cash on delivery</span><span><i></i>7-day returns</span></div>
+</div>
+<div class="ft-mark" aria-hidden="true">Books for All</div>
+<div class="ft-in"><div class="ft-bot"><div>© 2026 Books for All · Old books, singles and combos</div><nav><button data-go="shop">Shop</button><button data-go="blog">Blog</button><button data-go="about">About us</button><button data-go="team">Team</button><button data-act="signup">Sign up</button></nav><button class="ft-top" data-act="top">Back to top <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M5 12l7-7 7 7"/></svg></button></div></div>
+</footer>
 <button class="fcart" data-act="cart">Cart (<b class="cc">0</b>)</button>
 <div id="view" hidden><header class="bnav" id="bnav"><div class="bn-in"><button class="bn-logo" data-go="home" aria-label="Home"><svg viewBox="125 250 765 530" aria-hidden="true"><g stroke="#231f20" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
 <path d="M310,260H750V288H310C275,288 250,315 250,351C250,387 275,415 310,415H750V443H310C260,443 222,402 222,351C222,300 260,260 310,260Z" fill="#f4573a"/>
@@ -694,7 +804,7 @@ function land(){
  var n=function(c){return B.filter(function(b){return b.c===c}).length};
  var C=[['classic','Classic',n('classic')+' books'],['modern','Modern Art',n('modern')+' books'],['nonfiction','Nonfiction',n('nonfiction')+' books'],['combo','Combos',n('combo')+' deals']];
  $('#lcats').innerHTML=C.map(function(c){return '<button class="cbox" data-cat="'+c[0]+'" style="background-color:'+COL[c[0]]+';color:'+(c[0]==='nonfiction'?'#1c1c1c':'#fff')+'"><span class="bdg"><svg width="28" height="28" viewBox="-22 -22 44 44"><path d="M0,-20 Q2.5,-2.5 20,0 Q2.5,2.5 0,20 Q-2.5,2.5 -20,0 Q-2.5,-2.5 0,-20Z" fill="#1c1c1c"/></svg></span><span class="ct">'+c[1]+'</span><span class="cn">'+c[2]+' →</span></button>'}).join('');
- $('#lsingles').innerHTML=[0,1,4,5,8,9,3,6].map(function(i){return card(B[i])}).join('');
+ $('#lsingles').innerHTML=B.filter(function(b){return !b.items}).map(card).join('');
  $('#lcombos').innerHTML=B.filter(function(b){return b.items}).map(card).join('');
  var act=B.filter(function(b){return b.dl});$('#lofsec').hidden=!act.length;
  if(act.length){var f0=act.reduce(function(a,b){return Date.parse(b.dl.end)<Date.parse(a.dl.end)?b:a});$('#lofcd').dataset.end=f0.dl.end;$('#loffers').innerHTML=act.map(card).join('')}
@@ -817,7 +927,7 @@ function route(){
 }
 function setBtn(t){document.querySelectorAll('.btn,.mbtn,.nbtn').forEach(function(b){b.textContent=t})}
 var acts={
- cart:cartM,join:function(){openM('<h2>Join the team</h2><p style="margin-bottom:8px">Tell us how you would like to help and we will get in touch.</p><form id="joinf"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><select class="fi" name="rl" aria-label="How you would like to help"><option>Volunteer reader</option><option>Campus ambassador</option><option>Collection partner</option><option>Something else</option></select><textarea class="fi" name="ms" rows="3" placeholder="A few words about you (optional)"></textarea><button class="sub">Send</button></form>')},coach:function(){openM('<h2>Admission coaching</h2><p style="margin-bottom:8px">Tell us what you are preparing for and our team will get in touch.</p><form id="coachf"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><select class="fi" name="lv" aria-label="Level"><option>School admission</option><option>College admission</option><option selected>University admission</option><option>Medical or engineering admission</option><option>Other</option></select><textarea class="fi" name="ms" rows="3" placeholder="Anything we should know? (optional)"></textarea><button class="sub">Send request</button></form>')},donate:function(){openM('<h2>Donate books</h2><p style="margin-bottom:8px">Tell us what you would like to give and we will get in touch.</p><form id="donf"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><input class="fi" name="ar" placeholder="Your area or city" required><textarea class="fi" name="bk" rows="3" placeholder="Which books would you like to donate?" required></textarea><button class="sub">Submit donation</button></form>')},sell:function(){openM('<h2>Post your old book</h2><p style="margin-bottom:8px">Tell us about the book you want to sell.</p><form id="sellf"><input class="fi" name="t" placeholder="Book title" required><input class="fi" name="a" placeholder="Author"><select class="fi" name="c" aria-label="Condition"><option>Like new</option><option selected>Good</option><option>Fair</option></select><input class="fi" name="p" type="number" min="0" placeholder="Your price (৳)" required><input class="fi" name="ct" placeholder="Your phone or email" required><button class="sub">Submit book</button></form>')},wish:function(x){var i=+x.dataset.i,on=!st.wish[i];if(on)st.wish[i]=1;else delete st.wish[i];x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);x.innerHTML=wishHtml(i);x.classList.remove('pop');void x.offsetWidth;x.classList.add('pop');say(on?'Saved “'+B[i].t+'”':'Removed from saved')},cscroll:function(x){var c=x.closest('.bs').querySelector('.cscroll');if(c)c.scrollBy({left:+x.dataset.d*c.clientWidth*.8,behavior:'smooth'})},detail:function(x){go('book-'+x.dataset.i)},
+ cart:cartM,top:function(){window.scrollTo({top:0,behavior:'smooth'})},join:function(){openM('<h2>Join the team</h2><p style="margin-bottom:8px">Tell us how you would like to help and we will get in touch.</p><form id="joinf"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><select class="fi" name="rl" aria-label="How you would like to help"><option>Volunteer reader</option><option>Campus ambassador</option><option>Collection partner</option><option>Something else</option></select><textarea class="fi" name="ms" rows="3" placeholder="A few words about you (optional)"></textarea><button class="sub">Send</button></form>')},coach:function(){openM('<h2>Admission coaching</h2><p style="margin-bottom:8px">Tell us what you are preparing for and our team will get in touch.</p><form id="coachf"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><select class="fi" name="lv" aria-label="Level"><option>School admission</option><option>College admission</option><option selected>University admission</option><option>Medical or engineering admission</option><option>Other</option></select><textarea class="fi" name="ms" rows="3" placeholder="Anything we should know? (optional)"></textarea><button class="sub">Send request</button></form>')},donate:function(){openM('<h2>Donate books</h2><p style="margin-bottom:8px">Tell us what you would like to give and we will get in touch.</p><form id="donf"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><input class="fi" name="ar" placeholder="Your area or city" required><textarea class="fi" name="bk" rows="3" placeholder="Which books would you like to donate?" required></textarea><button class="sub">Submit donation</button></form>')},sell:function(){openM('<h2>Post your old book</h2><p style="margin-bottom:8px">Tell us about the book you want to sell.</p><form id="sellf"><input class="fi" name="t" placeholder="Book title" required><input class="fi" name="a" placeholder="Author"><select class="fi" name="c" aria-label="Condition"><option>Like new</option><option selected>Good</option><option>Fair</option></select><input class="fi" name="p" type="number" min="0" placeholder="Your price (৳)" required><input class="fi" name="ct" placeholder="Your phone or email" required><button class="sub">Submit book</button></form>')},wish:function(x){var i=+x.dataset.i,on=!st.wish[i];if(on)st.wish[i]=1;else delete st.wish[i];x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);x.innerHTML=wishHtml(i);x.classList.remove('pop');void x.offsetWidth;x.classList.add('pop');say(on?'Saved “'+B[i].t+'”':'Removed from saved')},cscroll:function(x){var c=x.closest('.bs').querySelector('.cscroll');if(c)c.scrollBy({left:+x.dataset.d*c.clientWidth*.8,behavior:'smooth'})},detail:function(x){go('book-'+x.dataset.i)},
  thumb:function(x){var b=B[st.cur],k=+x.dataset.k,im=pic(b,k);document.querySelectorAll('.th').forEach(function(t){t.classList.toggle('on',t===x)});$('#gmain').innerHTML=cover(im?Object.assign({},b,{img:im}):b);$('#gcap').textContent=LABS[k]+(im?'':' · photo not added yet')},
  share:function(){var u=location.href;if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){say('Link copied')},function(){say('Copy the link from the address bar')})}else say('Copy the link from the address bar')},
  buy:function(x){st.items.push(+x.dataset.i);sync();acts.checkout()},
@@ -836,7 +946,7 @@ document.addEventListener('click',function(e){
  var t=e.target,x;
  if(t===modal||t.closest('.mx')){closeM();return}
  if(x=t.closest('[data-add]')){st.items.push(+x.dataset.add);sync();flash(x);say('Added “'+B[x.dataset.add].t+'” to cart');return}
- if(x=t.closest('[data-cat]')){st.cat=x.dataset.cat;if(x.classList.contains('hit')||x.closest('#land')){st.q='';go('shop')}else shop();return}
+ if(x=t.closest('[data-cat]')){st.cat=x.dataset.cat;if(x.classList.contains('hit')||x.closest('#land,.ft')){st.q='';go('shop')}else shop();return}
  if(x=t.closest('[data-go]')){closeM();go(x.dataset.go);return}
  if(x=t.closest('[data-act]')){acts[x.dataset.act](x);return}
  if(x=t.closest('.post'))x.classList.toggle('open');
@@ -853,6 +963,7 @@ document.addEventListener('submit',function(e){
  else if(f.id==='coachf'){var cn=f.elements.nm.value.trim();closeM();say('Thanks, '+cn.split(' ')[0]+'! We got your coaching request')}
  else if(f.id==='donf'){var dn=f.elements.nm.value.trim();closeM();say('Thank you, '+dn.split(' ')[0]+'! We got your donation details')}
  else if(f.id==='sellf'){var bt=f.elements.t.value.trim();closeM();say('Thanks! We got the details for “'+bt+'”')}
+ else if(f.id==='nlf'){f.reset();say('Thanks! You are on the list')}
  else if(f.id==='mf'){closeM();say('Message sent to '+f.dataset.n)}
 });
 document.addEventListener('keydown',function(e){
@@ -861,7 +972,7 @@ document.addEventListener('keydown',function(e){
 });
 document.querySelectorAll('#stage .eyebrow,#stage .h,#stage .pill').forEach(function(n){n.setAttribute('data-go','shop')});
 document.querySelectorAll('#stage [data-go],#stage [data-act],#stage .hit').forEach(function(n){n.setAttribute('tabindex','0');n.setAttribute('role',n.hasAttribute('data-go')?'link':'button')});
-(function(){var s=$('svg.books'),m=$('#mbk');if(!s||!m)return;var c=s.cloneNode(true);c.innerHTML=c.innerHTML.replace(/grain/g,'grain2').replace(/id="star"/g,'id="star2"').replace(/#star"/g,'#star2"');c.setAttribute('class','mbooks');c.setAttribute('viewBox','870 210 970 1010');c.removeAttribute('width');c.removeAttribute('height');m.appendChild(c);c.querySelectorAll('.hit').forEach(function(n){n.setAttribute('tabindex','0');n.setAttribute('role','button')})})();
+(function(){var s=$('svg.books'),m=$('#mbk');if(!s||!m)return;var c=s.cloneNode(true);c.innerHTML=c.innerHTML.replace(/grain/g,'grain2').replace(/id="star"/g,'id="star2"').replace(/#star"/g,'#star2"');c.setAttribute('class','mbooks');c.setAttribute('viewBox','888 261 1016 959');c.removeAttribute('width');c.removeAttribute('height');m.appendChild(c);c.querySelectorAll('.hit').forEach(function(n){n.setAttribute('tabindex','0');n.setAttribute('role','button')})})();
 applyDeals();land();tick();setInterval(tick,1000);window.addEventListener('hashchange',route);route();
 })();
 </script>
@@ -926,6 +1037,136 @@ applyDeals();land();tick();setInterval(tick,1000);window.addEventListener('hashc
   s.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(cx-d/2)+'px;top:'+(cy-d/2)+'px';
   b.appendChild(s);setTimeout(function(){s.remove()},650);
  });
+})();
+</script>
+<script>
+(function(){
+ var PY=1220,CL=.6;
+ var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var suppress=false;
+ document.addEventListener('click',function(e){if(suppress){e.stopPropagation();e.preventDefault()}},true);
+function makeShelf(B,X0,X1,PY,CL){
+ var GAP=.3,N=B.length,i;
+ function rotP(px,p,a){var c=Math.cos(a),s=Math.sin(a),dx=p[0]-px,dy=p[1]-PY;return [px+dx*c-dy*s,PY+dx*s+dy*c]}
+ function exAt(px,e,y,a){var A=rotP(px,e[0],a),Z=rotP(px,e[1],a);if(A[1]===Z[1])return null;var t=(y-A[1])/(Z[1]-A[1]);return t<0||t>1?null:A[0]+(Z[0]-A[0])*t}
+ /* smallest horizontal clearance between the right edge of L and the left edge of R */
+ function gap(L,aL,R,aR){
+  var lo=Math.max(L.top,R.top)+8,hi=1205,n=12,g=1e9,k,y,xl,xr,c;
+  for(k=0;k<=n;k++){y=hi-(hi-lo)*k/n;xl=exAt(L.px,L.R,y,aL);xr=exAt(R.px,R.L,y,aR);if(xl!==null&&xr!==null&&xr-xl<g)g=xr-xl}
+  c=rotP(L.px,L.R[0],aL);xr=exAt(R.px,R.L,c[1],aR);if(xr!==null&&xr-c[0]<g)g=xr-c[0];
+  c=rotP(R.px,R.L[0],aR);xl=exAt(L.px,L.R,c[1],aL);if(xl!==null&&c[0]-xl<g)g=c[0]-xl;
+  return g;
+ }
+ /* least angle book i+1 may have when book i sits at aL */
+ function minR(i,aL){
+  var L=B[i],R=B[i+1],lo=-CL,hi=CL,k,m;
+  if(gap(L,aL,R,-CL)>=GAP)return -CL;
+  if(gap(L,aL,R,CL)<GAP)return 9;
+  for(k=0;k<24;k++){m=(lo+hi)/2;if(gap(L,aL,R,m)>=GAP)hi=m;else lo=m}
+  return hi;
+ }
+ /* greatest angle book i may have when book i+1 sits at aR */
+ function maxL(i,aR){
+  var L=B[i],R=B[i+1],lo=-CL,hi=CL,k,m;
+  if(gap(L,CL,R,aR)>=GAP)return CL;
+  if(gap(L,-CL,R,aR)<GAP)return -9;
+  for(k=0;k<24;k++){m=(lo+hi)/2;if(gap(L,m,R,aR)>=GAP)lo=m;else hi=m}
+  return lo;
+ }
+ /* the screen edges act as walls */
+ function okL(b,a){return Math.min(rotP(b.px,b.wl[0],a)[0],rotP(b.px,b.wl[1],a)[0])>=X0-.6}
+ function okR(b,a){return Math.max(rotP(b.px,b.wr[0],a)[0],rotP(b.px,b.wr[1],a)[0])<=X1+.6}
+ B.forEach(function(b){
+  var lo,hi,k,m,l,h;
+  if(okL(b,-CL))lo=-CL;else if(!okL(b,0))lo=0;else{l=-CL;h=0;for(k=0;k<30;k++){m=(l+h)/2;if(okL(b,m))h=m;else l=m}lo=h}
+  if(okR(b,CL))hi=CL;else if(!okR(b,0))hi=0;else{l=0;h=CL;for(k=0;k<30;k++){m=(l+h)/2;if(okR(b,m))l=m;else h=m}hi=l}
+  b.lo=lo;b.hi=hi;b.a=0;
+ });
+ /* how far each book can possibly go when every neighbour is squeezed against the walls */
+ B[0].lb=B[0].lo;
+ for(i=1;i<N;i++)B[i].lb=Math.min(B[i].hi,Math.max(B[i].lo,minR(i-1,B[i-1].lb)));
+ B[N-1].ub=B[N-1].hi;
+ for(i=N-2;i>=0;i--)B[i].ub=Math.max(B[i].lo,Math.min(B[i].hi,maxL(i,B[i+1].ub)));
+ function pushR(j){var v=minR(j-1,B[j-1].a);if(v>B[j].a+1e-6){B[j].a=Math.min(v,B[j].hi);return true}return false}
+ function pushL(j){var v=maxL(j,B[j+1].a);if(v<B[j].a-1e-6){B[j].a=Math.max(v,B[j].lo);return true}return false}
+ /* book d was moved: neighbours only move if it shoves them, and they stay where they end up */
+ function fromDragged(d){var j;for(j=d+1;j<N;j++)if(!pushR(j))break;for(j=d-1;j>=0;j--)if(!pushL(j))break}
+ /* used for the little intro sway, where every book has its own target */
+ function relax(){var r,j;for(r=0;r<2;r++){for(j=N-2;j>=0;j--)pushL(j);for(j=1;j<N;j++)pushR(j)}}
+ return {fromDragged:fromDragged,relax:relax,gap:gap};
+}
+
+ function setup(svg){
+  var gs=[].slice.call(svg.querySelectorAll('g.bk'));if(!gs.length)return;
+  var vb=svg.viewBox&&svg.viewBox.baseVal,X0=vb&&vb.width?vb.x:0,X1=vb&&vb.width?vb.x+vb.width:1906;
+  var pp=function(s){return s.trim().split(/\s+/).map(function(t){var a=t.split(',');return [+a[0],+a[1]]})};
+  var B=gs.map(function(g){
+   var q=pp(g.querySelector('polygon[filter]').getAttribute('points')),hp=pp(g.querySelector('.hit').getAttribute('points'));
+   var t0=(PY-hp[0][1])/(hp[3][1]-hp[0][1]),t1=(PY-hp[1][1])/(hp[2][1]-hp[1][1]);
+   return {g:g,px:+g.dataset.px,top:+g.dataset.top,a:0,L:[q[0],q[3]],R:[q[1],q[2]],
+    wl:[hp[0],[hp[0][0]+(hp[3][0]-hp[0][0])*t0,PY]],wr:[hp[1],[hp[1][0]+(hp[2][0]-hp[1][0])*t1,PY]]};
+  });
+  var S=makeShelf(B,X0,X1,PY,CL),raf=0,last=0,drag=null,intro=null;
+  function pt(e){var m=svg.getScreenCTM();if(!m)return null;var p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(m.inverse())}
+  function ang(b,p){return Math.atan2(p.x-b.px,Math.max(40,PY-p.y))}
+  function draw(){B.forEach(function(b){b.g.style.transform=b.a?'translate('+b.px+'px,'+PY+'px) rotate('+b.a+'rad) translate('+(-b.px)+'px,'+(-PY)+'px)':''})}
+  function introStep(){
+   var done=true;
+   B.forEach(function(b,i){
+    var tt=intro.t-i*.11,v=0;
+    if(tt>0){v=-(.05+.008*i)*Math.exp(-2.4*tt)*(.5-.5*Math.cos(6.2832*1.6*tt));if(tt<2.2)done=false}else done=false;
+    b.a=Math.max(b.lo,v);
+   });
+   if(done){B.forEach(function(b){b.a=0});intro=null;return false}
+   S.relax();return true;
+  }
+  function frame(t){
+   raf=0;var dt=Math.min(.05,(t-last)/1000),go=false;last=t;
+   if(intro&&introStep())go=true;
+   if(drag){
+    var b=drag.b,k=reduce?1:1-Math.exp(-dt*30);
+    b.a+=(drag.tg-b.a)*k;if(Math.abs(drag.tg-b.a)<1e-5)b.a=drag.tg;
+    S.fromDragged(drag.i);
+    if(drag.down||b.a!==drag.tg)go=true;else drag=null;
+   }
+   draw();
+   if(go){raf=requestAnimationFrame(frame)}
+  }
+  function start(){if(!raf){last=performance.now();raf=requestAnimationFrame(frame)}}
+  svg.addEventListener('pointerdown',function(e){
+   if(e.button>0)return;
+   var h=e.target.closest&&e.target.closest('.hit');if(!h)return;
+   var i=gs.indexOf(h.closest('g.bk')),b=B[i],p=pt(e);if(!b||!p)return;
+   intro=null;
+   drag={b:b,i:i,id:e.pointerId,down:true,x:e.clientX,y:e.clientY,moved:false,g0:ang(b,p),a0:b.a,tg:b.a};
+   suppress=false;
+   try{h.setPointerCapture(e.pointerId)}catch(_){}
+   start();
+  });
+  svg.addEventListener('pointermove',function(e){
+   if(!drag||!drag.down||e.pointerId!==drag.id)return;
+   var p=pt(e);if(!p)return;
+   if(!drag.moved&&Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)>6)drag.moved=true;
+   /* the book follows your finger, but only as far as the neighbours and the screen edges allow */
+   if(drag.moved)drag.tg=Math.max(drag.b.lb,Math.min(drag.b.ub,drag.a0+ang(drag.b,p)-drag.g0));
+   start();
+  });
+  function end(e){
+   if(!drag||!drag.down||e.pointerId!==drag.id)return;
+   drag.down=false;
+   if(drag.moved){suppress=true;setTimeout(function(){suppress=false},120)}
+   start();
+  }
+  svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  svg._shelf={B:B,S:S,set:function(i,a){B[i].a=Math.max(B[i].lb,Math.min(B[i].ub,a));S.fromDragged(i);draw()}};
+  if(!reduce&&'IntersectionObserver' in window){
+   var io=new IntersectionObserver(function(en){
+    if(en[0].isIntersecting){io.disconnect();if(!drag){intro={t:0};start()}}
+   },{threshold:.3});
+   io.observe(svg);
+  }
+ }
+ document.querySelectorAll('svg.books,svg.mbooks').forEach(setup);
 })();
 </script>
 </body>

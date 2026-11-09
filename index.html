@@ -484,6 +484,76 @@ html.dk .nbtn{color:var(--bg)}
  #land .pc,#land .cmb{flex-basis:calc((100% - 24px)/3.4)}
 }
 
+/* ===== home page: smaller product cards on desktop ===== */
+@media(min-width:1200px){
+ #land #lsingles,#land #loffers{grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:24px 18px}
+ #land .combos{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+ #land .cover{font-size:16px;padding:12px;box-shadow:5px 0 0 #000}
+ #land .cb,#land .cb.of{top:8px;left:8px;padding:3px 8px;font-size:10px}
+ #land .cb.of{left:auto;right:8px}
+ #land .meta{font-size:13px;margin:10px 0 8px}
+ #land .pr{font-size:14px;gap:8px}
+ #land .add{padding:8px 14px;font-size:13px}
+ #land .dl{font-size:12px}
+ #land .cmb{padding:18px;box-shadow:6px 0 0 #000}
+ #land .cmb h3{font-size:22px}
+ #land .cmb li{font-size:13px;padding:7px 0}
+}
+
+/* ===== home page: smaller section titles ===== */
+#land .lh h2{font-size:clamp(28px,4.2vw,64px);line-height:1}
+#land .lh small{font-size:clamp(12px,1.4vw,15px);margin-bottom:8px}
+#land .lh{padding-top:20px;margin-bottom:28px}
+#land .lnk{font-size:15px;padding:10px 20px}
+#land .bigcd{padding:10px 16px;box-shadow:6px 0 0 #000}
+#land .bigcd b{font-size:clamp(18px,2.4vw,28px)}
+@media(max-width:640px){#land .lh h2{font-size:clamp(24px,7vw,32px)}}
+
+/* ===== team page: smaller cards and text ===== */
+.tmpage .abhero{gap:28px;padding:4px 0 36px}
+.tmpage .abey,.tmpage .abeyb{font-size:clamp(12px,1.2vw,14px);margin-bottom:10px}
+.tmpage .abh1{font-size:clamp(32px,5.5vw,64px)}
+.tmpage .abp{font-size:clamp(14px,1.4vw,16px);margin:16px 0 22px}
+.tmpage .abrow .sub,.tmpage .abrow .lnk{font-size:14px;padding:10px 20px}
+.tmpage .tmav{width:clamp(52px,7vw,80px);font-size:clamp(18px,2.6vw,28px)}
+.tmpage .abstats{margin-bottom:48px}
+.tmpage .abstats>div{padding:18px 16px}
+.tmpage .abstats b{font-size:clamp(26px,3.4vw,40px)}
+.tmpage .abstats span{font-size:13px}
+.tmpage .absec{margin-bottom:56px}
+.tmpage .abh2{font-size:clamp(24px,3.2vw,38px);margin-bottom:22px}
+.tmpage .tmgrid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:24px 20px}
+.tmpage .tmc{box-shadow:6px 0 0 #000;margin-right:6px}
+.tmpage .tmp{aspect-ratio:16/9}
+.tmpage .tmp b{font-size:clamp(36px,4.4vw,52px)}
+.tmpage .tmp .cb{top:10px;left:10px;font-size:9px;padding:2px 8px}
+.tmpage .tmb{padding:14px}
+.tmpage .tmn{font-size:19px}
+.tmpage .tmr{font-size:12px;margin:3px 0 8px}
+.tmpage .tmbio{font-size:13px;line-height:1.5;margin-bottom:10px}
+.tmd{margin:0 0 12px;border-top:1.5px solid var(--ink)}
+.tmd>div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid rgba(28,28,28,.2);font-size:12px;line-height:1.35}
+.tmd dt{font-weight:700;opacity:.6;flex:none}
+.tmd dd{margin:0;text-align:right;font-weight:600}
+.tmpage .tmtags{gap:5px;margin-bottom:12px}
+.tmpage .tmtags .tag{font-size:11px;padding:2px 8px}
+.tmpage .tmpick{padding:10px 0;font-size:12px}
+.tmpage .tmpick small{font-size:10px}
+.tmpage .tmb .lnk{font-size:12px;padding:8px 14px;margin-top:10px}
+.tmpage .abvals{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.tmpage .abv{padding:16px;box-shadow:6px 0 0 #000}
+.tmpage .abv i{font-size:13px;margin-bottom:10px}
+.tmpage .abv h4{font-size:18px;margin-bottom:6px}
+.tmpage .abv p{font-size:13px;line-height:1.5}
+.tmpage .abfeat{padding:clamp(20px,3vw,32px);gap:20px;box-shadow:6px 0 0 #000}
+.tmpage .abfeat h2{font-size:clamp(22px,2.8vw,32px)}
+.tmpage .abfeat p{font-size:14px;margin-bottom:16px}
+.tmpage .abl li{font-size:13px;padding:8px 0 8px 26px}
+.tmpage .abl li::before{top:11px;width:12px;height:12px}
+.tmpage .abw{font-size:14px;padding:10px 20px}
+.tmpage .abcta{padding-top:26px}
+.tmpage .abcta h2{font-size:clamp(22px,3vw,34px)}
+
 /* ===== book shelf physics ===== */
 g.bk{transform-origin:0 0;will-change:transform}
 svg.books,svg.mbooks{touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -783,7 +853,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
    <button class="mbtn" data-act="signup">Sign up</button>
    <button class="mi" data-act="menu" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
   </div>
-  <div class="mpanel"><button data-go="shop">Shop</button><button data-go="blog">Blog</button><button data-go="about">About us</button><button data-go="team">Team</button></div>
+  <div class="mpanel"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="about">About us</button><button data-go="team">Team</button></div>
  </nav>
  <div class="mbody">
   <div class="mtxt">
@@ -837,11 +907,13 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
   <div class="abs vdiv" style="left:250px"></div>
   <div class="abs link" data-go="shop" style="left:330px">Shop</div>
   <div class="abs vdiv" style="left:412px"></div>
-  <div class="abs link" data-go="blog" style="left:488px">Blog</div>
-  <div class="abs vdiv" style="left:567px"></div>
-  <div class="abs link" data-go="about" style="left:666px">About us</div>
-  <div class="abs vdiv" style="left:767px"></div>
-  <div class="abs link" data-go="team" style="left:848px">Team</div>
+  <div class="abs link" data-go="free" style="left:488px">Free Books</div>
+  <div class="abs vdiv" style="left:623px"></div>
+  <div class="abs link" data-go="ebooks" style="left:699px">E-Books</div>
+  <div class="abs vdiv" style="left:814px"></div>
+  <div class="abs link" data-go="about" style="left:890px">About us</div>
+  <div class="abs vdiv" style="left:991px"></div>
+  <div class="abs link" data-go="team" style="left:1072px">Team</div>
   <div class="abs vdiv" style="left:1399px"></div>
   <svg class="abs" data-act="search" aria-label="Search" style="left:1451px;top:52px" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="1.6"><circle cx="16" cy="16" r="12"/><path d="M25 25l3 3" stroke-linecap="round"/></svg>
   <div class="abs vdiv" style="left:1537px"></div>
@@ -990,7 +1062,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
 <div class="ft-loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="ftcity">Dhaka, Bangladesh</span></div>
 </div>
 <nav class="ft-col" aria-label="Explore"><h3>Explore</h3><ul>
-<li><button class="ft-lk" data-go="shop">Shop</button></li><li><button class="ft-lk" data-go="blog">Blog</button></li><li><button class="ft-lk" data-go="about">About us</button></li><li><button class="ft-lk" data-go="team">Team</button></li><li><button class="ft-lk" data-act="signup">Sign up</button></li></ul></nav>
+<li><button class="ft-lk" data-go="shop">Shop</button></li><li><button class="ft-lk" data-go="free">Free Books</button></li><li><button class="ft-lk" data-go="ebooks">E-Books</button></li><li><button class="ft-lk" data-go="about">About us</button></li><li><button class="ft-lk" data-go="team">Team</button></li><li><button class="ft-lk" data-act="signup">Sign up</button></li></ul></nav>
 <nav class="ft-col" aria-label="Shelves"><h3>Shelves</h3><ul>
 <li><button class="ft-lk" data-cat="classic"><i class="ft-dot" style="background:#fd7b2e"></i>Classic</button></li>
 <li><button class="ft-lk" data-cat="modern"><i class="ft-dot" style="background:#2a4577"></i>Modern Art</button></li>
@@ -1000,7 +1072,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
 <nav class="ft-col" aria-label="Get involved"><h3>Get involved</h3><ul>
 <li><button class="ft-lk" data-act="sell">Post your old books</button></li><li><button class="ft-lk" data-act="donate">Donate books</button></li><li><button class="ft-lk" data-act="coach">Admission coaching</button></li><li><button class="ft-lk" data-act="join">Join the team</button></li></ul></nav>
 <nav class="ft-col" aria-label="Help"><h3>Help</h3><ul>
-<li><button class="ft-lk" data-act="msg" data-n="our team" data-t="our team">Message our team</button></li><li><button class="ft-lk" data-go="team">Help choosing a book</button></li><li><button class="ft-lk" data-act="cart">Your cart</button></li><li><button class="ft-lk" data-act="search">Search books</button></li></ul></nav>
+<li><button class="ft-lk" data-act="msg" data-n="our team" data-t="our team">Message our team</button></li><li><button class="ft-lk" data-act="cart">Your cart</button></li><li><button class="ft-lk" data-act="search">Search books</button></li></ul></nav>
 </div>
 <div class="ft-mark" aria-hidden="true"><div><span>P</span><span>U</span><span>R</span><span>O</span><span>N</span><span>O</span></div></div>
 <div class="ft-bot"><div>© 2026 Purono · Old books, singles and combos</div><div class="ft-r"><span>Made with <span class="ft-heart" aria-label="love">♥</span> in Dhaka</span><button class="ft-top" data-act="top">Back to top <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div></div>
@@ -1038,7 +1110,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
 <path d="M500,683C500,640 540,610 590,610C612,610 622,618 628,625C615,618 605,618 590,621C548,623 515,648 513,683Z" fill="#231f20"/>
 <path d="M628,625C640,614 655,608 680,608H805V620H690C660,620 645,625 632,632Z" fill="#231f20"/>
 <path d="M685,642H805M514,680H607M742,717H805" fill="none" stroke-width="1.8"/>
-</g></svg></button><nav class="bn-links" aria-label="Main"><button data-go="shop">Shop</button><button data-go="blog">Blog</button><button data-go="about">About us</button><button data-go="team">Team</button></nav><span class="bn-sp"></span><button class="bn-i" data-act="search" aria-label="Search"><svg width="24" height="24" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="2.2" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M25 25l4 4" stroke-linecap="round"/></svg></button><button class="bn-i" data-act="cart" aria-label="Cart"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1c1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><b class="cc bn-n" hidden>0</b></button><button class="nbtn" data-act="signup">Sign up</button><button class="bn-i bn-burger" data-act="bmenu" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button></div><div class="bn-panel"><button data-go="shop">Shop</button><button data-go="blog">Blog</button><button data-go="about">About us</button><button data-go="team">Team</button></div></header><div class="vtop"><button class="vback" data-go="home">← Back</button><div class="vtitle" id="vt"></div></div><div class="vbody" id="vb"></div></div>
+</g></svg></button><nav class="bn-links" aria-label="Main"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="about">About us</button><button data-go="team">Team</button></nav><span class="bn-sp"></span><button class="bn-i" data-act="search" aria-label="Search"><svg width="24" height="24" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="2.2" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M25 25l4 4" stroke-linecap="round"/></svg></button><button class="bn-i" data-act="cart" aria-label="Cart"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1c1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><b class="cc bn-n" hidden>0</b></button><button class="nbtn" data-act="signup">Sign up</button><button class="bn-i bn-burger" data-act="bmenu" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button></div><div class="bn-panel"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="about">About us</button><button data-go="team">Team</button></div></header><div class="vtop"><button class="vback" data-go="home">← Back</button><div class="vtitle" id="vt"></div></div><div class="vbody" id="vb"></div></div>
 <div id="modal" hidden><div class="mbox"><button class="mx" aria-label="Close">×</button><div id="mc"></div></div></div>
 <div id="toast" role="status"></div>
 <script>
@@ -1208,10 +1280,6 @@ function shop(){
  shRender();shH();requestAnimationFrame(shH);setTimeout(shH,60);
  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(shH);
 }
-function blog(){
- var P=[['Nov 2, 2026','Why regular reading sharpens your writing','Reading widely gives you more words, more structures and more ways to explain an idea. Even twenty minutes a day changes how clearly you can put your own thoughts on paper.'],['Oct 19, 2026','Five classics worth starting this winter','If the classics feel intimidating, begin with shorter novels and read a chapter a night. Our team picks start with the most readable ones.'],['Oct 5, 2026','How to read more nonfiction without burning out','Pick one idea per book, keep notes in your own words, and stop when a book stops serving you. Finishing is not the goal; learning is.']];
- vb.innerHTML=P.map(function(p){return '<div class="post" tabindex="0"><small>'+p[0]+'</small><h3>'+p[1]+'</h3><p>'+p[2]+'</p></div>'}).join('');
-}
 function about(){
  var sg=B.filter(function(b){return !b.items}).length,cm=B.filter(function(b){return b.items}).length;
  var star='<span class="bdg"><svg width="28" height="28" viewBox="-22 -22 44 44" aria-hidden="true"><path d="M0,-20 Q2.5,-2.5 20,0 Q2.5,2.5 0,20 Q-2.5,2.5 -20,0 Q-2.5,-2.5 0,-20Z" fill="#1c1c1c"/></svg></span>';
@@ -1235,22 +1303,35 @@ function about(){
  '<section class="abband"><div class="abeyb">OUR IDEA</div><h2>Regular reading helps you formulate your own thoughts.</h2><p>That is why we keep good books affordable and easy to pass on. When one reader finishes a book, the next reader should be able to pick it up without paying a fortune.</p><button class="abw" data-go="shop">Start reading</button></section>'+
  '<section class="abcta"><h2>Ready to give a book a second life?</h2><div class="abrow"><button class="sub abbtn" data-act="sell">Post your old books</button><button class="lnk" data-act="donate">Donate books</button><button class="lnk" data-go="shop">Browse books</button></div></section>';
 }
+function freebooks(){
+ var fr=B.filter(function(b){return !b.items&&b.p===0});
+ vb.innerHTML='<section class="abhero"><div class="abt"><div class="abey">FREE BOOKS</div><h1 class="abh1">Books that<br>cost nothing.</h1><p class="abp">Donated books that are free to anyone who needs them. Pick one up, read it, and pass it on when you are done.</p><div class="abrow"><button class="sub abbtn" data-act="donate">Donate books</button><button class="lnk" data-go="shop">Browse all books</button></div></div></section>'+
+ (fr.length?'<section class="absec"><div class="grid" id="lfree">'+fr.map(card).join('')+'</div></section>':'<section class="absec"><div class="abfeat" style="background-color:'+COL.nonfiction+';color:#1c1c1c"><div><div class="abeyb">NOTHING ON THE SHELF YET</div><h2>No free books right now</h2><p>Free books come from donations, so the shelf changes often. Ask us and we will let you know when new ones arrive.</p><button class="abw dkb" data-act="msg" data-n="our team" data-t="our team">Ask our team</button></div></div></section>');
+}
+function ebooks(){
+ vb.innerHTML='<section class="abhero"><div class="abt"><div class="abey">E-BOOKS</div><h1 class="abh1">Read on any<br>screen.</h1><p class="abp">Digital books for school, college, admission and general reading. Our e-book shelf is on its way.</p><div class="abrow"><button class="sub abbtn" data-act="msg" data-n="our team" data-t="our team">Ask about e-books</button><button class="lnk" data-go="shop">Browse printed books</button></div></div></section>'+
+ '<section class="absec"><div class="abfeat" style="background-color:'+COL.modern+';color:#fff"><div><div class="abeyb">COMING SOON</div><h2>E-books are on the way</h2><p>Tell us which titles you would like to read digitally and we will add them first.</p><button class="abw" data-act="msg" data-n="our team" data-t="our team">Request a title</button></div></div></section>';
+}
 function team(){
  var T=[['Alina Rahman','Head curator','Decides what goes on our shelves and checks every book’s condition before it is listed.',['Curation','Condition grading','Classics'],'classic',3],['Marcus Lee','Classics specialist','Knows the old favourites inside out and helps first-time readers find an easy way in.',['Classics','First-time readers'],'modern',2],['Sofia Alvarez','Art book editor','Looks after the modern art shelf and writes the notes that help you compare books.',['Modern art','Illustrated books'],'nonfiction',4],['Tariq Hossain','Nonfiction advisor','Helps self-learners pick practical reads on habits, thinking and everyday change.',['Nonfiction','Study habits'],'combo',8],['Nusrat Jahan','Admission coaching lead','Guides students on which books to study and how to get ready for admission.',['Admission coaching','Study material'],'classic',10],['Imran Khan','Donations coordinator','Looks after book donations and makes sure they reach students who need them.',['Donations','Students'],'modern',11]];
+ var D=[['8 years','English, Bangla','Condition and grading questions','Sat–Thu, 10 am – 6 pm'],['6 years','English, Bangla','Finding a first classic','Sat–Thu, 12 – 8 pm'],['5 years','English, Spanish, Bangla','Choosing art and illustrated books','Sun–Thu, 10 am – 5 pm'],['7 years','English, Bangla','Practical nonfiction picks','Sat–Wed, 11 am – 7 pm'],['9 years','English, Bangla','Admission preparation advice','Sat–Thu, 9 am – 5 pm'],['4 years','English, Bangla','Donation pickups and questions','Sat–Thu, 10 am – 6 pm']];
+ var DL=['Experience','Speaks','Ask about','Available'];
+ var det=function(k){return '<dl class="tmd">'+D[k].map(function(v,j){return '<div><dt>'+DL[j]+'</dt><dd>'+esc(v)+'</dd></div>'}).join('')+'</dl>'};
  var dk=function(c){return c==='nonfiction'?'#1c1c1c':'#fff'};
  var ini=function(n){return n.split(' ').map(function(w){return w[0]}).join('')};
  var hero=T.slice(0,4).map(function(m){return '<div class="tmav" style="background-color:'+COL[m[4]]+';color:'+dk(m[4])+'">'+ini(m[0])+'</div>'}).join('');
- var cards=T.map(function(m,k){var bk=B[m[5]];return '<article class="tmc" style="animation-delay:'+(k*70)+'ms"><div class="tmp" style="background-color:'+COL[m[4]]+';color:'+dk(m[4])+'"><span class="cb">'+esc(m[1].toUpperCase())+'</span><b>'+ini(m[0])+'</b></div><div class="tmb"><div class="tmn">'+esc(m[0])+'</div><div class="tmr">'+esc(m[1])+'</div><p class="tmbio">'+esc(m[2])+'</p><div class="tmtags">'+m[3].map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join('')+'</div><button class="inc tmpick" data-go="book-'+m[5]+'"><span class="mini" style="background-color:'+COL[bk.c]+';color:'+dk(bk.c)+'">'+esc(bk.t)+'</span><span><small>STAFF PICK</small><br><b>'+esc(bk.t)+'</b><br>'+esc(bk.a)+'</span></button><button class="lnk" data-act="msg" data-n="'+esc(m[0])+'">Message '+esc(m[0].split(' ')[0])+'</button></div></article>'}).join('');
+ var cards=T.map(function(m,k){var bk=B[m[5]];return '<article class="tmc" style="animation-delay:'+(k*70)+'ms"><div class="tmp" style="background-color:'+COL[m[4]]+';color:'+dk(m[4])+'"><span class="cb">'+esc(m[1].toUpperCase())+'</span><b>'+ini(m[0])+'</b></div><div class="tmb"><div class="tmn">'+esc(m[0])+'</div><div class="tmr">'+esc(m[1])+'</div><p class="tmbio">'+esc(m[2])+'</p>'+det(k)+'<div class="tmtags">'+m[3].map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join('')+'</div><button class="inc tmpick" data-go="book-'+m[5]+'"><span class="mini" style="background-color:'+COL[bk.c]+';color:'+dk(bk.c)+'">'+esc(bk.t)+'</span><span><small>STAFF PICK</small><br><b>'+esc(bk.t)+'</b><br>'+esc(bk.a)+'</span></button><button class="lnk" data-act="msg" data-n="'+esc(m[0])+'">Message '+esc(m[0].split(' ')[0])+'</button></div></article>'}).join('');
  var li=function(a){return '<ul class="abl">'+a.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul>'};
  var pr=[['01','Collect','Books come to us from sellers and donors who want their books to be read again.'],['02','Check','We look through the cover, spine and pages of every single book.'],['03','Grade','Each book gets an honest grade: Fair, Good or Like new.'],['04','Pack',esc(STORE.pack)+'.']];
- vb.innerHTML='<section class="abhero"><div class="abt"><div class="abey">TEAM</div><h1 class="abh1">People who<br>love books.</h1><p class="abp">We are a small team of readers, curators and mentors. We pick, check and grade every book, and we help students find the right ones for school, college and admission.</p><div class="abrow"><button class="sub abbtn" data-act="msg" data-n="our team" data-t="our team">Message the team</button><button class="lnk" data-act="join">Join us</button></div></div><div class="tmcl" aria-hidden="true">'+hero+'</div></section>'+
+ vb.innerHTML='<div class="tmpage"><section class="abhero"><div class="abt"><div class="abey">TEAM</div><h1 class="abh1">People who<br>love books.</h1><p class="abp">We are a small team of readers, curators and mentors. We pick, check and grade every book, and we help students find the right ones for school, college and admission.</p><div class="abrow"><button class="sub abbtn" data-act="msg" data-n="our team" data-t="our team">Message the team</button><button class="lnk" data-act="join">Join us</button></div></div><div class="tmcl" aria-hidden="true">'+hero+'</div></section>'+
  '<section class="abstats"><div><b>'+T.length+'</b><span>people on the team</span></div><div><b>3</b><span>book shelves we look after</span></div><div><b>3</b><span>honest condition grades</span></div><div><b>2–4</b><span>days delivery across Bangladesh</span></div></section>'+
  '<section class="absec"><div class="abeyb">MEET THE TEAM</div><h2 class="abh2">The people behind<br>every shelf</h2><div class="tmgrid">'+cards+'</div></section>'+
  '<section class="absec"><div class="abeyb">HOW WE WORK</div><h2 class="abh2">Every book goes through<br>the same four steps</h2><div class="abvals">'+pr.map(function(v,k){return '<div class="abv" style="animation-delay:'+(k*70)+'ms"><i>'+v[0]+'</i><h4>'+v[1]+'</h4><p>'+v[2]+'</p></div>'}).join('')+'</div></section>'+
+ '<section class="absec"><div class="abeyb">GOOD TO KNOW</div><h2 class="abh2">How we look after<br>every order</h2><div class="abvals">'+[['01','Delivery',STORE.delivery+'.'],['02','Payment',STORE.pay+'.'],['03','Returns',STORE.ret+'.'],['04','Packing',STORE.pack+'.']].map(function(v,k){return '<div class="abv" style="animation-delay:'+(k*70)+'ms"><i>'+v[0]+'</i><h4>'+v[1]+'</h4><p>'+esc(v[2])+'</p></div>'}).join('')+'</div></section>'+
  '<section class="absec"><div class="abfeat" style="background-color:'+COL.classic+';color:#fff"><div><div class="abeyb">JOIN THE TEAM</div><h2>Love books? Help us pass them on.</h2><p>We are always happy to hear from readers, students and volunteers who want to help old books find new homes.</p><button class="abw" data-act="join">Get in touch</button></div>'+li(['Volunteer reader: help check and grade books','Campus ambassador: spread the word at your school or college','Collection partner: help gather donated books','Something else? Tell us how you’d like to help'])+'</div></section>'+
- '<section class="abcta"><h2>Got a question for the team?</h2><div class="abrow"><button class="sub abbtn" data-act="msg" data-n="our team" data-t="our team">Message our team</button><button class="lnk" data-go="shop">Browse books</button></div></section>';
+ '<section class="abcta"><h2>Got a question for the team?</h2><div class="abrow"><button class="sub abbtn" data-act="msg" data-n="our team" data-t="our team">Message our team</button><button class="lnk" data-go="shop">Browse books</button></div></section></div>';
 }
-var V={shop:['Shop',shop],blog:['Blog',blog],about:['About us',about],team:['Team',team]};
+var V={shop:['Shop',shop],about:['About us',about],free:['Free Books',freebooks],ebooks:['E-Books',ebooks],team:['Team',team]};
 function route(){
  var h=location.hash.slice(1),mm=/^book-(\d+)$/.exec(h),v=mm&&B[+mm[1]]?['Book details',function(){book(+mm[1])}]:V[h];
  if(!v){view.hidden=true;document.body.classList.remove('bkopen');document.body.style.overflow='';return}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign in · Books for All</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fefdfb;--ink:#1c1c1c;--orange:#f47c2c}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);overflow-x:hidden}
+#wrap{width:100%;overflow:hidden;position:relative}
+#stage{position:absolute;top:0;left:0;width:1906px;height:1220px;transform-origin:0 0;background:var(--bg);font-family:'Manrope','Helvetica Neue',Arial,sans-serif;color:var(--ink);overflow:hidden}
+.abs{position:absolute}
+.nav-line{left:71px;top:130px;width:1763px;height:2px;background:var(--ink)}
+.vdiv{top:36px;width:2px;height:95px;background:var(--ink)}
+.link{top:36px;height:95px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:500;transform:translateX(-50%)}
+.btn{text-decoration:none;left:1591px;top:37px;width:195px;height:57px;border-radius:29px;background:var(--ink);color:#fff;font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center}
+.eyebrow{left:143px;top:309px;font-size:22px;font-weight:700;color:var(--orange);letter-spacing:.2px}
+.h{font-family:'Outfit',sans-serif;font-weight:700;font-size:196px;line-height:196px;color:#1d1d1d;white-space:nowrap}
+.pill{left:268px;top:373px;width:138px;height:315px;border:26px solid #1d1d1d;border-radius:69px}
+.input{left:143px;top:747px;width:490px;height:72px;border:1.5px solid var(--ink);border-radius:36px;display:flex;align-items:center;padding-left:28px;font-size:20px;font-weight:500}
+.go{left:569px;top:754px;width:58px;height:58px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center}
+.shop{left:681px;top:765px;font-size:22px;font-weight:600}
+.para{left:143px;top:1022px;width:600px;font-size:22px;line-height:34.5px;font-weight:500}
+.para a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+svg.books{position:absolute;left:0;top:0}
+.bt{font-family:'Outfit',sans-serif;font-weight:700;font-size:54px;fill:#fff;letter-spacing:1px}
+[data-go],[data-act],.hit{cursor:pointer}
+.link:hover,.shop:hover{opacity:.6}
+.btn{transition:background .2s}.btn:hover{background:#000}
+.go{border:0;padding:0;cursor:pointer}
+#q{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;color:inherit;height:100%;padding-right:76px}
+#q::placeholder{color:#1c1c1c;opacity:1}
+svg.books{pointer-events:none}
+.hit{pointer-events:auto;fill:rgba(255,255,255,0);transition:fill .2s}.hit:hover{fill:rgba(255,255,255,.12)}
+.mhero{display:none;background:var(--bg);color:var(--ink);font-family:'Manrope',Arial,sans-serif;padding:env(safe-area-inset-top,0px) 5vw 0}
+.mbar{display:flex;align-items:center;height:76px;border-bottom:2px solid var(--ink)}
+.mbar>svg{cursor:pointer;flex:none}.mbar .sp{flex:1}
+.mi{width:56px;height:100%;border:0;border-left:2px solid var(--ink);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);flex:none}
+.mbtn{margin:0 14px;border:0;background:var(--ink);color:#fff;border-radius:30px;padding:11px 22px;font:700 16px 'Manrope',Arial,sans-serif;cursor:pointer;white-space:nowrap;max-width:34vw;overflow:hidden;text-overflow:ellipsis;flex:none}
+.mpanel{display:none;flex-direction:column;border-bottom:2px solid var(--ink)}
+.mnav.open .mpanel{display:flex}
+
+.info{--ib:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -2.2 1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+.info .ih small{display:block;color:var(--orange);font-weight:700;font-size:22px;margin-bottom:10px}
+.info .ih h2{font:700 72px/.98 'Outfit',sans-serif;margin-bottom:34px}
+.info .cards{display:grid;grid-template-columns:1fr 1fr;gap:36px 40px}
+.ic{position:relative;min-height:250px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:26px;box-shadow:8px 0 0 #000;background-image:var(--ib)}
+.ic .tg{font:700 14px 'Manrope',Arial,sans-serif;letter-spacing:.12em;opacity:.85;margin-bottom:8px}
+.ic h3{font:700 30px/1.05 'Outfit',sans-serif;margin-bottom:10px}
+.ic p{font:500 17px/1.5 'Manrope',Arial,sans-serif}
+.facts{margin-top:44px;border-top:2px solid var(--ink);padding-top:18px}
+.facts h4{font:700 26px 'Outfit',sans-serif;margin-bottom:6px}
+.facts dl{display:grid;grid-template-columns:max-content 1fr;gap:0 36px;font:500 18px 'Manrope',Arial,sans-serif}
+.facts dt,.facts dd{padding:11px 0;border-bottom:1.5px solid var(--ink)}.facts dt{font-weight:700}
+.mhero .info{padding:18px 0 48px}
+.mhero .info .ih small{font-size:clamp(15px,2vw,20px)}
+.mhero .info .ih h2{font-size:clamp(40px,7vw,64px);margin-bottom:24px}
+.mhero .info .cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:30px 28px}
+.mhero .ic{min-height:210px;box-shadow:6px 0 0 #000}
+.mhero .ic p{font-size:16px}
+.mhero .facts{margin-top:34px}.mhero .facts dl{gap:0 20px;font-size:16px}
+
+.mpanel button{border:0;border-top:1.5px solid var(--ink);background:none;padding:16px 4px;text-align:left;font:600 20px 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer}
+.mbody{display:grid;grid-template-columns:1fr;gap:20px;padding-top:44px}
+.mtxt{padding-bottom:30px;min-width:0}
+.mbk{width:min(100%,520px);margin-left:auto;overflow:hidden}
+.mbooks{width:100%;height:auto;display:block}
+.meyebrow{color:var(--orange);font-weight:700;font-size:clamp(15px,2.2vw,22px);cursor:pointer;display:inline-block}
+.mh{position:relative;font-family:'Outfit',sans-serif;font-weight:700;font-size:16vw;width:4.5em;height:1.95em;color:#1d1d1d;margin:16px 0 26px;cursor:pointer}
+.mh .t{position:absolute;white-space:nowrap;line-height:1}
+.mh .pl{position:absolute;left:.673em;top:.168em;width:.704em;height:1.607em;border:.133em solid #1d1d1d;border-radius:.352em}
+.mrow{display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap}
+.mform{display:flex;align-items:center;flex:1 1 260px;max-width:490px;height:clamp(54px,6vw,72px);border:1.5px solid var(--ink);border-radius:40px;padding:0 6px 0 22px}
+.mform input{flex:1;min-width:0;border:0;outline:0;background:none;font:500 18px 'Manrope',Arial,sans-serif;color:var(--ink)}
+.mform input::placeholder{color:var(--ink);opacity:1}
+.mgo{flex:none;width:clamp(42px,4.6vw,58px);height:clamp(42px,4.6vw,58px);border-radius:50%;background:var(--ink);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mshop{border:0;background:none;font:600 clamp(17px,2vw,22px) 'Manrope',Arial,sans-serif;color:var(--ink);cursor:pointer;padding:6px 0}
+.mpara{font:500 clamp(15px,2vw,22px)/1.58 'Manrope',Arial,sans-serif;max-width:36em;margin-top:34px}
+.mpara a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+.bar{flex-wrap:wrap}.sq{min-width:200px}
+.mbox{max-height:90vh;max-height:90dvh;overflow:auto}
+.lh small{font-size:clamp(15px,2vw,20px)}
+.about p{font-size:clamp(17px,2.2vw,20px)}
+@media(max-width:1199px){.mhero{display:block}#wrap{display:none}}
+@media(min-width:641px){.mh{font-size:min(10.5vw,120px)}.mbody{padding-top:56px}}
+@media(min-width:900px){.mbody{grid-template-columns:1.1fr .9fr;gap:3vw;align-items:end}.mtxt{padding-bottom:48px}}
+.mbk{width:calc(100% + 10vw);margin:0 -5vw;max-width:none;overflow:hidden}
+@media(min-width:900px) and (max-width:1199px){.mbk{width:calc(100% + 5vw);margin:0 -5vw 0 0}}
+.mbooks{width:100%;height:auto;display:block}
+
+a{color:inherit;text-decoration:none}
+.link{text-decoration:none;color:var(--ink)}
+/* heading (same Outfit lettering + tall pill as the home page) */
+.hd{display:grid;grid-template-columns:var(--c1) .704em auto;grid-template-rows:.903em .903em;font-family:'Outfit',sans-serif;font-weight:700;line-height:1;color:#1d1d1d;white-space:nowrap;--c1:.673em}
+.hd b{font-weight:700;display:block;height:.903em}
+.hd .pl2{grid-column:2;grid-row:1/3;margin-top:.168em;width:.704em;height:1.607em;border:.133em solid #1d1d1d;border-radius:.352em}
+.hd .r1{grid-row:1}.hd .r2{grid-row:2}.hd .c3{padding-left:.04em}
+/* form */
+.af{--ih:66px;--fz:20px;--bh:57px;--bf:22px;width:100%}
+.af .f{position:relative;margin-bottom:12px}
+.af input{width:100%;height:var(--ih);border:1.5px solid var(--ink);border-radius:999px;background:none;padding:0 72px 0 28px;font:500 var(--fz) 'Manrope',Arial,sans-serif;color:var(--ink);outline:0;transition:box-shadow .2s}
+.af input::placeholder{color:#1c1c1c;opacity:1}
+.af input:focus{box-shadow:0 0 0 3px rgba(244,124,44,.4)}
+.af .f.bad input{border-color:#d41330}
+.af .eye{position:absolute;right:calc(var(--ih)*.1);top:50%;transform:translateY(-50%);width:calc(var(--ih)*.8);height:calc(var(--ih)*.8);border-radius:50%;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.af .eye:hover{background:#f0ece4}.af .eye.on{background:var(--ink);color:#fff}
+.af .er{font:600 calc(var(--fz)*.85) 'Manrope',Arial,sans-serif;color:#d41330;margin:2px 0 0 28px;min-height:0}
+.af .er:empty{display:none}
+.af .row{display:flex;align-items:center;gap:28px;margin-top:16px;flex-wrap:wrap}
+.af .sbm{height:var(--bh);padding:0 calc(var(--bh)*.7);border:0;border-radius:999px;background:var(--ink);color:#fff;font:700 var(--bf) 'Manrope',Arial,sans-serif;cursor:pointer;transition:background .2s;display:flex;align-items:center;gap:12px}
+.af .sbm:hover{background:var(--orange)}.af .sbm:disabled{opacity:.6;cursor:wait}
+.af .alt{font:600 var(--bf) 'Manrope',Arial,sans-serif;color:var(--ink)}.af .alt:hover{opacity:.6}
+.mhero .af{--ih:clamp(54px,6vw,66px);--fz:clamp(16px,2.2vw,20px);--bh:clamp(48px,5.4vw,57px);--bf:clamp(17px,2vw,22px);max-width:490px}
+.mhero .hd{font-size:16vw;margin:16px 0 26px;width:max-content}
+@media(min-width:641px){.mhero .hd{font-size:min(10.5vw,120px)}}
+.mpanel a{border-top:1.5px solid var(--ink);padding:16px 4px;font:600 20px 'Manrope',Arial,sans-serif;color:var(--ink)}
+.mbtn{text-decoration:none;display:inline-flex;align-items:center}
+.mbar>a.lg{display:flex;flex:none}
+#toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 22px;border-radius:30px;z-index:200;font:600 15px 'Manrope',Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center}
+#toast.on{opacity:1}
+@media(max-width:1199px){.mhero{display:block}#wrap{display:none}}
+.mnav.open .mpanel{display:flex}
+
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage">
+<a class="abs" href="index.html" aria-label="Home" style="left:112px;top:52px"><svg width="86" height="60" viewBox="125 250 765 530"><g stroke="#231f20" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M310,260H750V288H310C275,288 250,315 250,351C250,387 275,415 310,415H750V443H310C260,443 222,402 222,351C222,300 260,260 310,260Z" fill="#f4573a"/>
+<path d="M310,298H717V415H310C275,415 250,387 250,351C250,320 275,298 310,298Z" fill="#fbf0ea"/>
+<path d="M310,288H717V298H310C280,298 262,318 255,340C255,310 280,288 310,288Z" fill="#231f20"/>
+<path d="M568,298H627V370L597,350L568,370Z" fill="#25695a"/>
+<path d="M283,350H380M380,376H527M660,356H717" fill="none" stroke-width="1.8"/>
+<circle cx="751" cy="273" r="14" fill="#d41330"/><circle cx="751" cy="430" r="14" fill="#d41330"/>
+<path d="M430,444H790C830,444 858,480 858,518C858,556 830,593 790,593H430Z" fill="#04a0d3"/>
+<path d="M425,446C465,446 491,480 491,519C491,558 465,592 425,592Z" fill="#136b9b"/>
+<path d="M492,505C492,550 470,585 430,593H470C505,585 522,550 522,515Z" fill="#231f20"/>
+<path d="M590,446C630,446 655,480 655,519C655,558 630,592 590,592C620,570 635,545 635,519C635,490 620,465 590,446Z" fill="#136b9b"/>
+<path d="M655,505C676,525 676,555 650,592H640C660,560 662,535 655,505Z" fill="#231f20"/>
+<path d="M812,446C842,456 858,485 858,519C858,556 835,590 800,593C825,570 832,545 832,519C832,490 825,465 812,446Z" fill="#136b9b"/>
+<path d="M832,519H858C858,556 835,590 800,593C822,570 832,545 832,519Z" fill="#231f20"/>
+<path d="M520,520C522,535 525,545 528,548H627M750,490C755,510 755,530 748,545M758,488C765,508 765,535 758,548M766,490C772,512 770,535 766,546" fill="none" stroke-width="1.8"/>
+<rect x="153" y="444" width="277" height="24" rx="12" fill="#fbf0ea"/>
+<rect x="153" y="569" width="287" height="24" rx="12" fill="#fbf0ea"/>
+<path d="M176,468H385C420,468 442,495 442,519C442,543 420,570 385,570H176Z" fill="#fbf0ea"/>
+<path d="M178,468H395C425,470 440,490 442,505C425,485 405,478 385,478H178Z" fill="#231f20"/>
+<path d="M178,498H380M225,538H268" fill="none" stroke-width="1.8"/>
+<path d="M265,593H640V772H265C215,772 175,735 175,683C175,631 215,593 265,593Z" fill="#d41330"/>
+<path d="M255,680C255,632 295,593 345,593H470V680Z" fill="#f0576a"/>
+<path d="M255,680H470V772H345C295,772 255,735 255,680Z" fill="#231f20"/>
+<path d="M470,593C430,593 380,630 380,683C380,735 430,772 470,772H650V593Z" fill="#d41330"/>
+<rect x="600" y="593" width="230" height="15" rx="7.5" fill="#fbf0ea"/>
+<rect x="640" y="757" width="190" height="15" rx="7.5" fill="#fbf0ea"/>
+<path d="M484,683C484,628 535,593 590,593H680V608H805V757H680V772H590C535,772 484,738 484,683Z" fill="#fbf0ea"/>
+<path d="M500,683C500,640 540,610 590,610C612,610 622,618 628,625C640,614 655,608 680,608H805V757H680C655,757 640,752 628,742C622,752 610,764 590,764C540,764 500,730 500,683Z" fill="#fbf0ea"/>
+<path d="M500,683C500,640 540,610 590,610C612,610 622,618 628,625C615,618 605,618 590,621C548,623 515,648 513,683Z" fill="#231f20"/>
+<path d="M628,625C640,614 655,608 680,608H805V620H690C660,620 645,625 632,632Z" fill="#231f20"/>
+<path d="M685,642H805M514,680H607M742,717H805" fill="none" stroke-width="1.8"/>
+</g></svg></a>
+<div class="abs vdiv" style="left:250px"></div><a class="abs link" href="index.html#shop" style="left:330px">Shop</a><div class="abs vdiv" style="left:412px"></div><a class="abs link" href="index.html#blog" style="left:488px">Blog</a><div class="abs vdiv" style="left:567px"></div><a class="abs link" href="index.html#about" style="left:666px">About us</a><div class="abs vdiv" style="left:767px"></div><a class="abs link" href="index.html#team" style="left:848px">Team</a><div class="abs vdiv" style="left:1399px"></div><a class="abs" href="index.html#shop" aria-label="Search books" style="left:1451px;top:52px"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="1.6"><circle cx="16" cy="16" r="12"/><path d="M25 25l3 3" stroke-linecap="round"/></svg></a><div class="abs nav-line"></div>
+<div class="abs eyebrow">WELCOME BACK</div>
+<div class="abs" style="left:136px;top:340px"><div class="hd" style="font-size:196px;--c1:.78em"  role="heading" aria-level="1" aria-label="LOGIN NOW"><b class="r1" style="grid-column:1" aria-hidden="true">L</b><span class="pl2" aria-hidden="true"></span><b class="r1 c3" style="grid-column:3" aria-hidden="true">GIN</b><b class="r2" style="grid-column:1" aria-hidden="true">N</b><b class="r2 c3" style="grid-column:3" aria-hidden="true">W</b></div></div>
+<div class="abs" style="left:143px;top:735px;width:490px"><form class="af" data-kind="in" novalidate><div class="f"><input name="em" type="email" placeholder="Email" autocomplete="email" aria-label="Email" required><div class="er" role="alert"></div></div><div class="f"><input name="pw" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required><button type="button" class="eye" aria-label="Show password" aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="er" role="alert"></div></div><div class="row"><button class="sbm" type="submit"><span>Sign in</span><svg width="24" height="16" viewBox="0 0 26 18" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h21M16 2l7 7-7 7"/></svg></button><a class="alt" href="index.html#shop">Go to shop</a></div></form></div>
+<p class="abs para" style="top:1022px">New here? <a href="signup.html">Create an account</a> to buy, sell and donate old books. Forgot your password? <a href="#" class="fg">Ask our team</a> and we will help you out.</p>
+
+<div class="abs" style="left:1010px;top:262px;width:790px"><section class="info"><div class="ih"><small>WHILE YOU’RE HERE</small><h2>What you<br>can do</h2></div><div class="cards"><article class="ic" style="background-color:#fd7b2e;color:#fff"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">SHOP</div><h3>Find your next read</h3><p>Browse classic, modern art and nonfiction books, plus combos, all with clear condition grades.</p></div></article><article class="ic" style="background-color:#2a4577;color:#fff"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">SELL</div><h3>Post your old books</h3><p>Finished a book? Pass it on to a reader who will enjoy it, on its own or in a combo.</p></div></article><article class="ic" style="background-color:#fbbc58;color:#1c1c1c"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">GUIDANCE</div><h3>Need help choosing?</h3><p>Message our team of professionals and they will help you make up your mind.</p></div></article><article class="ic" style="background-color:#1c1c1c;color:#fff"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">COMBOS</div><h3>More books, less money</h3><p>Study sets and reading bundles at a lower price than buying one by one.</p></div></article></div><div class="facts"><h4>Good to know</h4><dl><dt>Delivery</dt><dd>Across Bangladesh, usually 2–4 days</dd><dt>Payment</dt><dd>Cash on delivery</dd><dt>Returns</dt><dd>Within 7 days if the book is not as described</dd><dt>Packing</dt><dd>Wrapped in paper with a protective sleeve</dd></dl></div></section></div>
+</div></div>
+<div class="mhero"><nav class="mnav" id="mnav"><div class="mbar"><a class="lg" href="index.html" aria-label="Home"><svg width="52" height="36" viewBox="125 250 765 530"><g stroke="#231f20" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M310,260H750V288H310C275,288 250,315 250,351C250,387 275,415 310,415H750V443H310C260,443 222,402 222,351C222,300 260,260 310,260Z" fill="#f4573a"/>
+<path d="M310,298H717V415H310C275,415 250,387 250,351C250,320 275,298 310,298Z" fill="#fbf0ea"/>
+<path d="M310,288H717V298H310C280,298 262,318 255,340C255,310 280,288 310,288Z" fill="#231f20"/>
+<path d="M568,298H627V370L597,350L568,370Z" fill="#25695a"/>
+<path d="M283,350H380M380,376H527M660,356H717" fill="none" stroke-width="1.8"/>
+<circle cx="751" cy="273" r="14" fill="#d41330"/><circle cx="751" cy="430" r="14" fill="#d41330"/>
+<path d="M430,444H790C830,444 858,480 858,518C858,556 830,593 790,593H430Z" fill="#04a0d3"/>
+<path d="M425,446C465,446 491,480 491,519C491,558 465,592 425,592Z" fill="#136b9b"/>
+<path d="M492,505C492,550 470,585 430,593H470C505,585 522,550 522,515Z" fill="#231f20"/>
+<path d="M590,446C630,446 655,480 655,519C655,558 630,592 590,592C620,570 635,545 635,519C635,490 620,465 590,446Z" fill="#136b9b"/>
+<path d="M655,505C676,525 676,555 650,592H640C660,560 662,535 655,505Z" fill="#231f20"/>
+<path d="M812,446C842,456 858,485 858,519C858,556 835,590 800,593C825,570 832,545 832,519C832,490 825,465 812,446Z" fill="#136b9b"/>
+<path d="M832,519H858C858,556 835,590 800,593C822,570 832,545 832,519Z" fill="#231f20"/>
+<path d="M520,520C522,535 525,545 528,548H627M750,490C755,510 755,530 748,545M758,488C765,508 765,535 758,548M766,490C772,512 770,535 766,546" fill="none" stroke-width="1.8"/>
+<rect x="153" y="444" width="277" height="24" rx="12" fill="#fbf0ea"/>
+<rect x="153" y="569" width="287" height="24" rx="12" fill="#fbf0ea"/>
+<path d="M176,468H385C420,468 442,495 442,519C442,543 420,570 385,570H176Z" fill="#fbf0ea"/>
+<path d="M178,468H395C425,470 440,490 442,505C425,485 405,478 385,478H178Z" fill="#231f20"/>
+<path d="M178,498H380M225,538H268" fill="none" stroke-width="1.8"/>
+<path d="M265,593H640V772H265C215,772 175,735 175,683C175,631 215,593 265,593Z" fill="#d41330"/>
+<path d="M255,680C255,632 295,593 345,593H470V680Z" fill="#f0576a"/>
+<path d="M255,680H470V772H345C295,772 255,735 255,680Z" fill="#231f20"/>
+<path d="M470,593C430,593 380,630 380,683C380,735 430,772 470,772H650V593Z" fill="#d41330"/>
+<rect x="600" y="593" width="230" height="15" rx="7.5" fill="#fbf0ea"/>
+<rect x="640" y="757" width="190" height="15" rx="7.5" fill="#fbf0ea"/>
+<path d="M484,683C484,628 535,593 590,593H680V608H805V757H680V772H590C535,772 484,738 484,683Z" fill="#fbf0ea"/>
+<path d="M500,683C500,640 540,610 590,610C612,610 622,618 628,625C640,614 655,608 680,608H805V757H680C655,757 640,752 628,742C622,752 610,764 590,764C540,764 500,730 500,683Z" fill="#fbf0ea"/>
+<path d="M500,683C500,640 540,610 590,610C612,610 622,618 628,625C615,618 605,618 590,621C548,623 515,648 513,683Z" fill="#231f20"/>
+<path d="M628,625C640,614 655,608 680,608H805V620H690C660,620 645,625 632,632Z" fill="#231f20"/>
+<path d="M685,642H805M514,680H607M742,717H805" fill="none" stroke-width="1.8"/>
+</g></svg></a><span class="sp"></span><a class="mi" href="index.html#shop" aria-label="Search books"><svg width="26" height="26" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="2"><circle cx="16" cy="16" r="12"/><path d="M25 25l4 4" stroke-linecap="round"/></svg></a><button class="mi" id="mb" aria-label="Menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button></div>
+<div class="mpanel"><a href="index.html#shop">Shop</a><a href="index.html#blog">Blog</a><a href="index.html#about">About us</a><a href="index.html#team">Team</a></div></nav>
+<div class="mbody"><div class="mtxt"><div class="meyebrow">WELCOME BACK</div><div class="hd" style="--c1:.78em" role="heading" aria-level="1" aria-label="LOGIN NOW"><b class="r1" style="grid-column:1" aria-hidden="true">L</b><span class="pl2" aria-hidden="true"></span><b class="r1 c3" style="grid-column:3" aria-hidden="true">GIN</b><b class="r2" style="grid-column:1" aria-hidden="true">N</b><b class="r2 c3" style="grid-column:3" aria-hidden="true">W</b></div><form class="af" data-kind="in" novalidate><div class="f"><input name="em" type="email" placeholder="Email" autocomplete="email" aria-label="Email" required><div class="er" role="alert"></div></div><div class="f"><input name="pw" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required><button type="button" class="eye" aria-label="Show password" aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="er" role="alert"></div></div><div class="row"><button class="sbm" type="submit"><span>Sign in</span><svg width="24" height="16" viewBox="0 0 26 18" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h21M16 2l7 7-7 7"/></svg></button><a class="alt" href="index.html#shop">Go to shop</a></div></form><p class="mpara">New here? <a href="signup.html">Create an account</a> to buy, sell and donate old books. Forgot your password? <a href="#" class="fg">Ask our team</a> and we will help you out.</p></div><div class="minfo"><section class="info"><div class="ih"><small>WHILE YOU’RE HERE</small><h2>What you<br>can do</h2></div><div class="cards"><article class="ic" style="background-color:#fd7b2e;color:#fff"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">SHOP</div><h3>Find your next read</h3><p>Browse classic, modern art and nonfiction books, plus combos, all with clear condition grades.</p></div></article><article class="ic" style="background-color:#2a4577;color:#fff"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">SELL</div><h3>Post your old books</h3><p>Finished a book? Pass it on to a reader who will enjoy it, on its own or in a combo.</p></div></article><article class="ic" style="background-color:#fbbc58;color:#1c1c1c"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">GUIDANCE</div><h3>Need help choosing?</h3><p>Message our team of professionals and they will help you make up your mind.</p></div></article><article class="ic" style="background-color:#1c1c1c;color:#fff"><svg width="58" height="58" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="30" fill="#fff"/><path d="M0,-19 Q2.4,-2.4 19,0 Q2.4,2.4 0,19 Q-2.4,2.4 -19,0 Q-2.4,-2.4 0,-19Z" fill="#1c1c1c"/></svg><div><div class="tg">COMBOS</div><h3>More books, less money</h3><p>Study sets and reading bundles at a lower price than buying one by one.</p></div></article></div><div class="facts"><h4>Good to know</h4><dl><dt>Delivery</dt><dd>Across Bangladesh, usually 2–4 days</dd><dt>Payment</dt><dd>Cash on delivery</dd><dt>Returns</dt><dd>Within 7 days if the book is not as described</dd><dt>Packing</dt><dd>Wrapped in paper with a protective sleeve</dd></dl></div></section></div></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+
+(function(){
+var s=document.getElementById('stage'),w=document.getElementById('wrap');
+function fit(){var k=window.innerWidth/1906;s.style.transform='scale('+k+')';w.style.height=(1220*k)+'px'}
+window.addEventListener('resize',fit);fit();
+var mb=document.getElementById('mb'),mn=document.getElementById('mnav');
+mb.addEventListener('click',function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+var UK='bfa-users',SK='bfa-user',HOME='index.html';
+function load(){try{return JSON.parse(localStorage.getItem(UK)||'[]')}catch(e){return []}}
+function save(u){try{localStorage.setItem(UK,JSON.stringify(u));return true}catch(e){return false}}
+function hex(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+function salt(){var a=new Uint8Array(8);crypto.getRandomValues(a);return hex(a)}
+function hash(pw,sl){var d=new TextEncoder().encode(sl+':'+pw);return crypto.subtle?crypto.subtle.digest('SHA-256',d).then(hex):Promise.resolve(btoa(sl+':'+pw))}
+function session(u){try{localStorage.setItem(SK,JSON.stringify({name:u.name,email:u.email}))}catch(e){}}
+var tt;function say(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},2800)}
+var EM=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function err(f,n,m){var g=f.elements[n].closest('.f');g.querySelector('.er').textContent=m||'';g.classList.toggle('bad',!!m);f.elements[n].setAttribute('aria-invalid',!!m)}
+document.addEventListener('click',function(e){
+ var b=e.target.closest('.eye');if(b){var i=b.parentNode.querySelector('input'),sh=i.type==='password';i.type=sh?'text':'password';b.classList.toggle('on',sh);b.setAttribute('aria-pressed',sh);b.setAttribute('aria-label',sh?'Hide password':'Show password');return}
+ if(e.target.closest('.fg')){e.preventDefault();say('Please contact the shop team to reset your password.')}
+});
+document.querySelectorAll('form.af').forEach(function(f){
+ var up=f.dataset.kind==='up';
+ f.addEventListener('input',function(e){if(e.target.name)err(f,e.target.name,'')});
+ f.addEventListener('submit',function(e){
+  e.preventDefault();var ok=true,first=null,E=f.elements;
+  function bad(n,m){err(f,n,m);ok=false;if(!first)first=E[n]}
+  var email=E.em.value.trim().toLowerCase(),pw=E.pw.value,name=up?E.nm.value.trim().replace(/\s+/g,' '):'';
+  if(up&&name.length<2)bad('nm','Please enter your full name.');
+  if(!EM.test(email))bad('em','Enter a valid email address.');
+  else if(up&&load().some(function(u){return u.email===email}))bad('em','This email already has an account.');
+  if(up&&pw.length<6)bad('pw','Use at least 6 characters.');
+  if(!up&&!pw)bad('pw','Enter your password.');
+  if(!ok){first.focus();return}
+  var btn=f.querySelector('.sbm'),lab=btn.firstChild;btn.disabled=true;lab.textContent='Please wait…';
+  function reset(){btn.disabled=false;lab.textContent=up?'Create account':'Sign in'}
+  if(up){var sl=salt();hash(pw,sl).then(function(h){var us=load(),u={name:name,email:email,salt:sl,hash:h,created:Date.now()};us.push(u);
+   if(!save(us)){reset();say('Could not save. Please enable browser storage.');return}
+   session(u);say('Welcome, '+name.split(' ')[0]+'! Your account is ready.');setTimeout(function(){location.href=HOME},1000)})}
+  else{var u=load().filter(function(x){return x.email===email})[0];
+   if(!u){reset();bad('pw','Wrong email or password.');first.focus();return}
+   hash(pw,u.salt).then(function(h){if(h!==u.hash){reset();err(f,'pw','Wrong email or password.');E.pw.focus();return}
+    session(u);say('Welcome back, '+u.name.split(' ')[0]+'!');setTimeout(function(){location.href=HOME},900)})}
+ });
+});
+})();
+
+</script>
+</body>
+</html>

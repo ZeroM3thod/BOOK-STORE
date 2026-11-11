@@ -417,6 +417,71 @@ html.dk .nbtn{color:var(--bg)}
 .abw.dkb{background:#1c1c1c;color:#fff}
 @media(min-width:900px){.abfeat{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}}
 @media(max-width:640px){.abfeat{box-shadow:6px 0 0 #000;margin-right:6px}.abchip{font-size:14px;padding:8px 14px}}
+#shopv.stv .cover{font-size:clamp(15px,1.6vw,21px);overflow:hidden;overflow-wrap:anywhere}#shopv .sinfo{border:2px solid var(--ink);box-shadow:8px 0 0 #000;padding:22px 24px;margin:0 8px 26px 0}#shopv .sinfo:empty{display:none}#shopv .sinfo h3{font:700 clamp(22px,2.6vw,30px)/1.1 'Outfit',sans-serif}#shopv .sinfo .abl{margin:10px 0 0}
+.dsh{max-width:1200px;margin:0 auto;color:var(--ink);font-family:'Manrope','Helvetica Neue',Arial,sans-serif}
+.dsh button{font:inherit;color:inherit;cursor:pointer}
+.dsh-head{display:grid;gap:20px;margin-bottom:48px}
+.dsh-head h1{font:700 clamp(42px,7vw,84px)/.95 'Outfit',sans-serif;margin-bottom:14px}
+.dsh-head p{font:500 clamp(15px,1.7vw,18px)/1.6 'Manrope',Arial,sans-serif;max-width:40em;opacity:.85}
+.dsh-search{position:relative}
+.dsh-sbox{position:relative}
+.dsh-sbox svg{position:absolute;left:20px;top:50%;margin:-9px 0 0}
+.dsh-sbox input{width:100%;border:2px solid var(--ink);border-radius:30px;padding:16px 22px 16px 54px;background:none;color:var(--ink);font:500 17px 'Manrope',Arial,sans-serif;outline:0}
+.dsh-sbox input:focus{border-color:var(--orange)}
+.dsh-res{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:20;background:var(--bg);border:2px solid var(--ink);border-radius:20px;box-shadow:0 14px 30px rgba(0,0,0,.18);overflow:hidden}
+.dsh-res[hidden]{display:none}
+.dsh-hit,.dsh-all{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;padding:12px 22px;border:0;border-bottom:1px solid rgba(128,128,128,.3);background:none;text-align:left}
+.dsh-hit:hover,.dsh-all:hover{background:rgba(128,128,128,.14)}
+.dsh-hit small{opacity:.65;font-size:13px}
+.dsh-all{border-bottom:0;font-weight:700;color:var(--orange)}
+.dsh-no{padding:16px 22px;opacity:.75}
+.dsh-pop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:600;font-size:14px}
+.dsh-chip{border:1.5px solid var(--ink);border-radius:30px;padding:8px 16px;background:none;font:600 14px 'Manrope',Arial,sans-serif;transition:background-color .2s,color .2s}
+.dsh-chip:hover{background:var(--ink);color:var(--bg)}
+.dsh-sec{margin-bottom:56px}
+.dsh-sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;margin-bottom:18px}
+.dsh-sh h2{font:700 clamp(24px,3vw,36px)/1.1 'Outfit',sans-serif}
+.dsh-sh p{opacity:.7;font-size:15px}
+.dsh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px}
+.dsh-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:10px;padding:22px;border:2px solid var(--ink);border-radius:22px;background:var(--bg);transition:transform .18s cubic-bezier(.2,.8,.3,1),box-shadow .18s}
+@media(hover:hover){.dsh-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}.dsh-card:hover .dsh-ex i{transform:translateX(4px)}}
+.dsh-card:active{transform:scale(.97)}
+.dsh-ic{width:54px;height:54px;border-radius:16px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.dsh-card h3{font:700 clamp(19px,2vw,23px)/1.15 'Outfit',sans-serif}
+.dsh-card p{font-size:15px;line-height:1.5;opacity:.8;flex:1}
+.dsh-ex{font-weight:700;font-size:15px;color:var(--orange)}
+.dsh-ex i{display:inline-block;font-style:normal;transition:transform .18s}
+.dsh-chip{transition:transform .18s cubic-bezier(.2,.8,.3,1),background-color .2s,color .2s}
+.dsh-chip.on{background:var(--ink);color:var(--bg)}
+.dsh-chip b{margin-left:5px;font-weight:700;opacity:.65}
+.dsh-chip.on b{opacity:.85}
+@media(hover:hover){.dsh-chip:hover{transform:translateY(-2px)}}
+.resv .cnt{margin:2px 0 26px;font-weight:600;font-size:15px}
+.resv .dsh-pop[hidden]{display:none}
+.rnone{grid-column:1/-1;position:relative;border:2px solid var(--ink);box-shadow:8px 0 0 #000;border-radius:22px;padding:clamp(28px,5vw,56px) clamp(20px,4vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center}
+.rnone .nart{width:min(220px,58vw);height:auto;margin-bottom:6px}
+.rnone h3{font:700 clamp(22px,3.6vw,30px)/1.1 'Outfit',sans-serif;margin-top:8px}
+.rnone p{margin:10px 0 0;opacity:.8;max-width:46ch;line-height:1.55}
+.rnone .nbtn{margin-top:22px;display:inline-flex;align-items:center;gap:8px}
+@media(max-width:640px){.rnone{box-shadow:6px 0 0 #000;margin-right:6px}}
+.dsh-tag{font:700 12px 'Manrope',Arial,sans-serif;letter-spacing:1.2px;color:var(--orange)}
+.dsh-bar{height:12px;border-radius:12px;border:2px solid var(--ink);overflow:hidden;width:100%}
+.dsh-bar i{display:block;height:100%;background:var(--orange);border-radius:12px}
+.dsh-pc{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;font-size:14px}
+.dsh-cont p{flex:0}
+.dsh-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
+.dsh-stat{border:2px solid var(--ink);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.dsh-sl{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;margin-bottom:6px}
+.dsh-si{width:36px;height:36px;border-radius:12px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.dsh-stat>b{font:700 clamp(34px,4vw,48px)/1 'Outfit',sans-serif}
+.dsh-stat>small{opacity:.7;font-size:14px}
+.dsh-stat .dsh-bar{margin-top:12px}
+.dsh-week{grid-column:1/-1}
+.dsh-bars{display:flex;align-items:flex-end;gap:clamp(8px,2vw,22px);height:150px;margin-top:8px}
+.dsh-bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px}
+.dsh-bars i{display:block;width:100%;max-width:60px;border-radius:12px 12px 4px 4px;background:var(--orange)}
+.dsh-bars em{font-style:normal;font-size:12px;font-weight:600;opacity:.7}
+@media(max-width:640px){.dsh-head{margin-bottom:36px}.dsh-sec{margin-bottom:44px}.dsh-card,.dsh-stat{padding:18px;border-radius:18px}}
 .bn-links button[aria-current]{background:var(--ink);color:var(--bg)}.bn-panel button[aria-current]{color:var(--orange)}
 
 /* ===== Team page ===== */
@@ -841,6 +906,67 @@ html.dk .ft-form button{color:var(--bg)}
 #shopv .pc{animation:none}
 #shopv .pcb{display:block;width:100%}
 html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
+
+/* ===== free books page: home-size cards, 6 per row, fully responsive ===== */
+#vb.freepg{max-width:1300px}
+.freepg .tmpage .grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px 18px;margin-top:0}
+.freepg .tmpage .grid .pc{display:flex;flex-direction:column;min-width:0}
+.freepg .tmpage .grid .pc>.pcb{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch}
+.freepg .tmpage .grid .cover{font-size:16px;padding:12px;box-shadow:5px 0 0 #000;margin-right:0}
+.freepg .tmpage .grid .cb,.freepg .tmpage .grid .cb.of{top:8px;left:8px;padding:3px 8px;font-size:10px}
+.freepg .tmpage .grid .cb.of{left:auto;right:8px}
+.freepg .tmpage .grid .meta{font-size:13px;margin:10px 0 8px;line-height:1.5}
+.freepg .tmpage .grid .pr{font-size:14px;gap:8px}
+.freepg .tmpage .grid .add{padding:8px 14px;font-size:13px}
+@media(max-width:1199px){
+ .freepg .tmpage .grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:20px 12px}
+ .freepg .tmpage .grid .cover{font-size:clamp(10px,1.5vw,14px);padding:8px;box-shadow:4px 0 0 #000}
+ .freepg .tmpage .grid .cb,.freepg .tmpage .grid .cb.of{top:6px;left:6px;padding:2px 7px;font-size:9px}
+ .freepg .tmpage .grid .cb.of{left:auto;right:6px}
+ .freepg .tmpage .grid .meta{font-size:11px;margin:8px 0 6px}
+ .freepg .tmpage .grid .pr{font-size:12px;gap:6px}
+ .freepg .tmpage .grid .add{padding:7px 8px;font-size:11px}
+}
+@media(max-width:899px){.freepg .tmpage .grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:640px){
+ .freepg .tmpage .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 10px}
+ .freepg .tmpage .grid .pr{flex-direction:column;align-items:stretch}
+ .freepg .tmpage .grid .add{width:100%}
+}
+@media(max-width:340px){.freepg .tmpage .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ===== shop page: smaller product cards, more per row ===== */
+@media(min-width:900px){
+ #shopv .grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:20px 12px}
+ #shopv .grid .cover{font-size:12px;padding:8px;box-shadow:4px 0 0 #000;margin-right:0}
+ #shopv .grid .cb{top:6px;left:6px;padding:2px 6px;font-size:8px}
+ #shopv .cover .cb.of{top:6px;right:6px;padding:2px 6px;font-size:8px}
+ #shopv .grid .meta{font-size:11.5px;margin:9px 0 6px;line-height:1.35}
+ #shopv .grid .pr{font-size:12px;gap:6px}
+ #shopv .grid .add{padding:7px 8px;font-size:11px}
+ #shopv .grid .dl{height:30px;font-size:10px;margin-top:4px}
+ #shopv .grid .dl.st{font-size:10px}
+ #shopv .grid .dl .cd{font-size:8px;gap:2px}
+ #shopv .grid .dl .cd .u small{display:none}
+ #shopv .grid .sv{font-size:10px}
+ #shopv .shopgrid{grid-template-columns:230px minmax(0,1fr);gap:28px}
+}
+@media(min-width:1200px){
+ #shopv .grid{grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:22px 14px}
+ #shopv .grid .cover{font-size:13px;padding:9px}
+ #shopv .shopgrid{grid-template-columns:260px minmax(0,1fr);gap:36px}
+}
+@media(min-width:641px) and (max-width:899px){
+ #shopv .grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 10px}
+ #shopv .grid .cover{font-size:11.5px;padding:8px;box-shadow:3px 0 0 #000;margin-right:0}
+ #shopv .grid .meta{font-size:11.5px}
+ #shopv .grid .add{padding:7px 4px;font-size:11px}
+ #shopv .grid .dl{height:28px}
+ #shopv .grid .dl .cd .u small{display:none}
+}
+@media(min-width:481px) and (max-width:640px){
+ #shopv .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 8px}
+}
 </style>
 </head>
 <body>
@@ -884,7 +1010,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
    <button class="mbtn" data-act="signup">Sign up</button>
    <button class="mi" data-act="menu" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
   </div>
-  <div class="mpanel"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="about">About us</button><button data-go="team">Team</button></div>
+  <div class="mpanel"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="study">Study</button><button data-go="about">About us</button><button data-go="team">Team</button></div>
  </nav>
  <div class="mbody">
   <div class="mtxt">
@@ -942,9 +1068,11 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
   <div class="abs vdiv" style="left:623px"></div>
   <div class="abs link" data-go="ebooks" style="left:699px">E-Books</div>
   <div class="abs vdiv" style="left:814px"></div>
-  <div class="abs link" data-go="about" style="left:890px">About us</div>
-  <div class="abs vdiv" style="left:991px"></div>
-  <div class="abs link" data-go="team" style="left:1072px">Team</div>
+  <div class="abs link" data-go="study" style="left:890px">Study</div>
+  <div class="abs vdiv" style="left:970px"></div>
+  <div class="abs link" data-go="about" style="left:1046px">About us</div>
+  <div class="abs vdiv" style="left:1147px"></div>
+  <div class="abs link" data-go="team" style="left:1228px">Team</div>
   <div class="abs vdiv" style="left:1399px"></div>
   <svg class="abs" data-act="search" aria-label="Search" style="left:1451px;top:52px" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="1.6"><circle cx="16" cy="16" r="12"/><path d="M25 25l3 3" stroke-linecap="round"/></svg>
   <div class="abs vdiv" style="left:1537px"></div>
@@ -1093,7 +1221,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
 <div class="ft-loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="ftcity">Dhaka, Bangladesh</span></div>
 </div>
 <nav class="ft-col" aria-label="Explore"><h3>Explore</h3><ul>
-<li><button class="ft-lk" data-go="shop">Shop</button></li><li><button class="ft-lk" data-go="free">Free Books</button></li><li><button class="ft-lk" data-go="ebooks">E-Books</button></li><li><button class="ft-lk" data-go="about">About us</button></li><li><button class="ft-lk" data-go="team">Team</button></li><li><button class="ft-lk" data-act="signup">Sign up</button></li></ul></nav>
+<li><button class="ft-lk" data-go="shop">Shop</button></li><li><button class="ft-lk" data-go="free">Free Books</button></li><li><button class="ft-lk" data-go="ebooks">E-Books</button></li><li><button class="ft-lk" data-go="study">Study</button></li><li><button class="ft-lk" data-go="about">About us</button></li><li><button class="ft-lk" data-go="team">Team</button></li><li><button class="ft-lk" data-act="signup">Sign up</button></li></ul></nav>
 <nav class="ft-col" aria-label="Shelves"><h3>Shelves</h3><ul>
 <li><button class="ft-lk" data-cat="classic"><i class="ft-dot" style="background:#fd7b2e"></i>Classic</button></li>
 <li><button class="ft-lk" data-cat="modern"><i class="ft-dot" style="background:#2a4577"></i>Modern Art</button></li>
@@ -1141,7 +1269,7 @@ html.dk #shopv .chip.on,html.dk #shopv .chip:hover{color:var(--bg)}
 <path d="M500,683C500,640 540,610 590,610C612,610 622,618 628,625C615,618 605,618 590,621C548,623 515,648 513,683Z" fill="#231f20"/>
 <path d="M628,625C640,614 655,608 680,608H805V620H690C660,620 645,625 632,632Z" fill="#231f20"/>
 <path d="M685,642H805M514,680H607M742,717H805" fill="none" stroke-width="1.8"/>
-</g></svg></button><nav class="bn-links" aria-label="Main"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="about">About us</button><button data-go="team">Team</button></nav><span class="bn-sp"></span><button class="bn-i" data-act="search" aria-label="Search"><svg width="24" height="24" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="2.2" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M25 25l4 4" stroke-linecap="round"/></svg></button><button class="bn-i" data-act="cart" aria-label="Cart"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1c1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><b class="cc bn-n" hidden>0</b></button><button class="nbtn" data-act="signup">Sign up</button><button class="bn-i bn-burger" data-act="bmenu" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button></div><div class="bn-panel"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="about">About us</button><button data-go="team">Team</button></div></header><div class="vtop"><button class="vback" data-go="home">← Back</button><div class="vtitle" id="vt"></div></div><div class="vbody" id="vb"></div></div>
+</g></svg></button><nav class="bn-links" aria-label="Main"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="study">Study</button><button data-go="about">About us</button><button data-go="team">Team</button></nav><span class="bn-sp"></span><button class="bn-i" data-act="search" aria-label="Search"><svg width="24" height="24" viewBox="0 0 36 36" fill="none" stroke="#1c1c1c" stroke-width="2.2" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M25 25l4 4" stroke-linecap="round"/></svg></button><button class="bn-i" data-act="cart" aria-label="Cart"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1c1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><b class="cc bn-n" hidden>0</b></button><button class="nbtn" data-act="signup">Sign up</button><button class="bn-i bn-burger" data-act="bmenu" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" stroke="#1c1c1c" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button></div><div class="bn-panel"><button data-go="shop">Shop</button><button data-go="free">Free Books</button><button data-go="ebooks">E-Books</button><button data-go="study">Study</button><button data-go="about">About us</button><button data-go="team">Team</button></div></header><div class="vtop"><button class="vback" data-go="home">← Back</button><div class="vtitle" id="vt"></div></div><div class="vbody" id="vb"></div></div>
 <div id="modal" hidden><div class="mbox"><button class="mx" aria-label="Close">×</button><div id="mc"></div></div></div>
 <div id="toast" role="status"></div>
 <script>
@@ -1156,7 +1284,9 @@ var B=[
 {t:'Shapes of Now',a:'Lena Ortiz',c:'modern',p:520,cond:'Like new'},{t:'Colour in Motion',a:'Daniel Reyes',c:'modern',p:580,cond:'Good'},{t:'The Bold Line',a:'Mira Kapoor',c:'modern',p:480,cond:'Good'},{t:'Gallery Without Walls',a:'Tom Hale',c:'modern',p:540,cond:'Fair'},
 {t:'Deep Habits',a:'Sara Quinn',c:'nonfiction',p:320,cond:'Like new'},{t:'The Quiet Economy',a:'Omar Siddiq',c:'nonfiction',p:350,cond:'Good'},{t:'Mapping the Mind',a:'Priya Nair',c:'nonfiction',p:380,cond:'Good'},{t:'Small Steps',a:'Ben Carter',c:'nonfiction',p:290,cond:'Fair'},
 {t:'Classic Starter Combo',a:'3 books',c:'combo',p:620,old:740,cond:'Mixed condition',items:[0,2,3]},{t:'Art Lover Pack',a:'3 books',c:'combo',p:1290,old:1580,cond:'Mixed condition',items:[4,5,6]},{t:'Think Better Bundle',a:'3 books',c:'combo',p:820,old:990,cond:'Mixed condition',items:[8,10,11]},
-{t:'Treasure Island',a:'Robert Louis Stevenson',c:'classic',p:0,cond:'Good'},{t:'The Time Machine',a:'H. G. Wells',c:'classic',p:0,cond:'Fair'},{t:'Walden',a:'Henry David Thoreau',c:'nonfiction',p:0,cond:'Good'}];
+{t:'Treasure Island',a:'Robert Louis Stevenson',c:'classic',p:0,cond:'Good'},{t:'The Time Machine',a:'H. G. Wells',c:'classic',p:0,cond:'Fair'},{t:'Walden',a:'Henry David Thoreau',c:'nonfiction',p:0,cond:'Good'},
+{t:'The Jungle Book',a:'Rudyard Kipling',c:'classic',p:0,cond:'Good'},{t:'Little Women',a:'Louisa May Alcott',c:'classic',p:0,cond:'Fair'},{t:'Meditations',a:'Marcus Aurelius',c:'nonfiction',p:0,cond:'Like new'}];
+var FC=[{t:'Adventure Starter Pack',a:'3 books',c:'combo',p:0,cond:'Mixed condition',items:[15,16,18]},{t:'Thinker’s Free Pack',a:'3 books',c:'combo',p:0,cond:'Mixed condition',items:[17,20,19]}];
 var PR=function(b){return b.p===0?'Free':CUR+b.p};
 var FEB=[{t:'Pride and Prejudice',a:'Jane Austen',c:'classic',fmt:'EPUB · PDF',n:'432 pages',u:'https://www.gutenberg.org/ebooks/1342'},{t:'Jane Eyre',a:'Charlotte Brontë',c:'classic',fmt:'EPUB · PDF',n:'532 pages',u:'https://www.gutenberg.org/ebooks/1260'},{t:'Frankenstein',a:'Mary Shelley',c:'modern',fmt:'EPUB · PDF',n:'280 pages',u:'https://www.gutenberg.org/ebooks/84'},{t:'The Adventures of Sherlock Holmes',a:'Arthur Conan Doyle',c:'nonfiction',fmt:'EPUB · PDF',n:'307 pages',u:'https://www.gutenberg.org/ebooks/1661'},{t:'A Tale of Two Cities',a:'Charles Dickens',c:'classic',fmt:'EPUB · PDF',n:'448 pages',u:'https://www.gutenberg.org/ebooks/98'},{t:'Moby-Dick',a:'Herman Melville',c:'modern',fmt:'EPUB · PDF',n:'720 pages',u:'https://www.gutenberg.org/ebooks/2701'}];
 
@@ -1167,6 +1297,10 @@ function sync(){st.cart=st.items.length;bump();document.querySelectorAll('.cc').
 function cover(b){return '<div class="cover" style="background-color:'+COL[b.c]+';color:'+(b.c==='nonfiction'?'#1c1c1c':'#fff')+'">'+(b.img?'<img src="'+esc(b.img)+'" alt="'+esc(b.t)+'" loading="lazy" onerror="this.remove()">':'')+(b.items?'<span class="cb">COMBO</span>':'')+(b.dl?'<span class="cb of">OFFER</span>':'')+esc(b.t)+'</div>'}
 function card(b){var i=B.indexOf(b);return '<div class="pc"><button class="pcb" data-act="detail" data-i="'+i+'">'+cover(b)+'<div class="meta"><b>'+esc(b.t)+'</b><br>'+(b.items?b.items.length+' books':esc(b.a))+' · '+esc(b.cond)+'</div></button><div class="pr"><span><b>'+PR(b)+'</b>'+(was(b)?' <s>'+CUR+was(b)+'</s>':'')+'</span><button class="add" data-add="'+i+'">Add to cart</button></div>'+(b.dl?'<div class="dl"><svg class="ci" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Ends in <b class="cd" data-end="'+b.dl.end+'"></b></div>':'')+'</div>'}
 function ecard(e,k){var cv=cover(e).replace('>'+esc(e.t)+'</div>','><span class="cb">E-BOOK</span><span class="cb of">FREE</span>'+esc(e.t)+'</div>');return '<div class="pc ebc" style="animation-delay:'+(k*60)+'ms"><a class="pcb" href="'+e.u+'" target="_blank" rel="noopener" aria-label="'+esc(e.t)+', read free e-book">'+cv+'<div class="meta"><b>'+esc(e.t)+'</b><br>'+esc(e.a)+' · '+esc(e.fmt)+'</div></a><div class="pr"><span><b>Free</b> <s style="opacity:.5">'+esc(e.n)+'</s></span><a class="add" href="'+e.u+'" target="_blank" rel="noopener">Read free</a></div></div>'}
+function fcard(b,k){var combo=!!b.items,i=B.indexOf(b),cv=cover(b);
+ cv=combo?cv.replace('>'+esc(b.t)+'</div>','><span class="cb of">FREE</span>'+esc(b.t)+'</div>'):cv.replace('>'+esc(b.t)+'</div>','><span class="cb">DONATED</span>'+esc(b.t)+'</div>');
+ var act=combo?'data-act="reqc" data-k="'+k+'"':'data-act="req" data-i="'+i+'"';
+ return '<div class="pc"><button class="pcb" '+act+' aria-label="'+esc(b.t)+', request this '+(combo?'combo':'book')+'">'+cv+'<div class="meta"><b>'+esc(b.t)+'</b><br>'+(combo?b.items.length+' books':esc(b.a))+' · '+esc(b.cond)+'</div></button><div class="pr"><span><b>Free</b></span><button class="add" '+act+'>Request</button></div></div>'}
 function ccard(b){var i=B.indexOf(b);return '<div class="cmb"><div><span class="cb2">COMBO · SAVE '+Math.round((1-b.p/b.old)*100)+'%</span><h3>'+esc(b.t)+'</h3></div><ul>'+b.items.map(function(k){return '<li>'+esc(B[k].t)+' <span>'+esc(B[k].a)+'</span></li>'}).join('')+'</ul><div class="pr"><span><b>'+PR(b)+'</b> <s>'+CUR+b.old+'</s></span><button class="add" data-add="'+i+'">Add combo</button></div></div>'}
 function land(){
  var n=function(c){return B.filter(function(b){return b.c===c}).length};
@@ -1177,9 +1311,17 @@ function land(){
  var act=B.filter(function(b){return b.dl});$('#lofsec').hidden=!act.length;
  if(act.length){var f0=act.reduce(function(a,b){return Date.parse(b.dl.end)<Date.parse(a.dl.end)?b:a});$('#lofcd').dataset.end=f0.dl.end;$('#loffers').innerHTML=act.map(card).join('')}
 }
+function reqM(b){var combo=!!b.items;
+ openM('<h2>Request '+(combo?'this combo':'this book')+'</h2><p style="margin-bottom:6px"><b>'+esc(b.t)+'</b>'+(combo?' · '+b.items.length+' books':' · '+esc(b.a))+'</p>'+
+ (combo?'<ul class="il">'+b.items.map(function(k){return '<li>'+esc(B[k].t)+' — '+esc(B[k].a)+'</li>'}).join('')+'</ul>':'')+
+ '<p style="margin-bottom:8px;font-size:14px">This book is donated, so it is free. Tell us who you are and how you would like to get it. Copies go to the first requests we receive.</p>'+
+ '<form id="reqf" data-t="'+esc(b.t)+'"><input class="fi" name="nm" placeholder="Your name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel">'+
+ '<select class="fi" name="how" aria-label="How you want to get it"><option>I will pick it up</option><option>Please send it to me</option></select>'+
+ '<textarea class="fi" name="ad" rows="2" placeholder="Address (only if you want it sent)"></textarea>'+
+ '<textarea class="fi" name="why" rows="2" placeholder="Why do you need this book? (optional)"></textarea><button class="sub">Send request</button></form>')}
 function detail(x){var i=+x.dataset.i,b=B[i];openM('<h2>'+esc(b.t)+'</h2><p style="margin-bottom:12px">'+(b.items?'Combo · '+b.items.length+' books':esc(b.a))+' · '+esc(b.cond)+'</p>'+(b.items?'<ul class="il">'+b.items.map(function(k){return '<li>'+esc(B[k].t)+' — '+esc(B[k].a)+'</li>'}).join('')+'</ul>':'<p style="margin-bottom:12px">Pre-loved copy, sold as a single book.</p>')+'<p style="font-size:24px;margin:10px 0"><b>'+PR(b)+'</b>'+(b.old?' <s>'+CUR+b.old+'</s>':'')+'</p><button class="sub" data-add="'+i+'">Add to cart</button>')}
 var STORE={name:'Books for All',city:'Dhaka, Bangladesh',delivery:'Delivery across Bangladesh, usually 2–4 days',pay:'Cash on delivery',ret:'Return within 7 days if the book is not as described',pack:'Wrapped in paper with a protective sleeve'};
-var DESC=['A sharp, witty novel of manners about family pressure, first impressions and learning to understand another person. A friendly first classic.','A coming-of-age story about ambition, class and loyalty, following a young man whose life changes when an unknown benefactor appears.','A sea voyage and an obsession: a captain’s hunt for one whale, mixed with long, curious chapters on life aboard a whaling ship.','The story of an orphaned governess who holds on to her independence and self-respect while facing a secretive household.','An illustrated look at how contemporary artists use shape, scale and space, with plenty of full-page images to browse.','Explores how colour creates energy and mood in modern work, with side-by-side examples you can compare.','A study of line, from quick sketches to confident graphic work, with examples and short notes from the artists.','Looks at art made outside traditional galleries, in public spaces and online, and why it matters to everyday viewers.','A practical guide to building routines that last, with simple weekly exercises you can start right away.','Explains everyday money ideas such as saving, trade and value in plain language for general readers.','An accessible introduction to how memory, attention and emotion work, written for curious beginners.','Short chapters on making real change through tiny, repeatable actions.','Three easy-to-start classics bundled at a lower price than buying them one by one. A good starter shelf or gift.','Three art books that pair well together: shapes, colour and line in one set. Great for students and art lovers.','Three practical nonfiction reads on habits, thinking and everyday change, bundled to save money.'];
+var DESC=['A sharp, witty novel of manners about family pressure, first impressions and learning to understand another person. A friendly first classic.','A coming-of-age story about ambition, class and loyalty, following a young man whose life changes when an unknown benefactor appears.','A sea voyage and an obsession: a captain’s hunt for one whale, mixed with long, curious chapters on life aboard a whaling ship.','The story of an orphaned governess who holds on to her independence and self-respect while facing a secretive household.','An illustrated look at how contemporary artists use shape, scale and space, with plenty of full-page images to browse.','Explores how colour creates energy and mood in modern work, with side-by-side examples you can compare.','A study of line, from quick sketches to confident graphic work, with examples and short notes from the artists.','Looks at art made outside traditional galleries, in public spaces and online, and why it matters to everyday viewers.','A practical guide to building routines that last, with simple weekly exercises you can start right away.','Explains everyday money ideas such as saving, trade and value in plain language for general readers.','An accessible introduction to how memory, attention and emotion work, written for curious beginners.','Short chapters on making real change through tiny, repeatable actions.','Three easy-to-start classics bundled at a lower price than buying them one by one. A good starter shelf or gift.','Three art books that pair well together: shapes, colour and line in one set. Great for students and art lovers.','Three practical nonfiction reads on habits, thinking and everyday change, bundled to save money.','A classic pirate adventure of a map, a hidden treasure and a young cabin boy. A donated copy, free to request.','A pioneering tale of a time traveller who journeys far into the future. A donated copy, free to request.','A quiet account of living simply beside a pond, and of paying close attention to the world. A donated copy, free to request.','Mowgli’s stories of the jungle, told in short, lively chapters. A donated copy, free to request.','Four sisters grow up together, each finding her own way. A donated copy, free to request.','Short, calm notes on living well, written as a personal journal by a Roman emperor. A donated copy, free to request.'];
 var FOR={classic:'First-time classic readers, students and gifts',modern:'Art lovers, students and anyone who likes browsing pictures',nonfiction:'Self-learners, curious readers and gifts',combo:'Gifts, starter collections and readers who want more for less'};
 var GR={'Like new':{c:'Clean, no visible wear',k:'Sharp, no bends',s:'Tight and uncracked',p:'Crisp and clean',d:'None',o:'Fresh, no odour',m:'None, book is complete',w:'None',sum:'Looks almost unread. Ready to read, or to gift as it is.'},'Good':{c:'Light shelf wear on the edges',k:'Light rubbing on a few corners',s:'Intact with minor creases',p:'Slight yellowing, nothing missing',d:'None or a few tiny spots',o:'Normal old-book smell',m:'None, book is complete',w:'None or very light pencil marks',sum:'A clean, well-kept copy with normal signs of use. Fully readable.'},'Fair':{c:'Visible wear and rubbed corners',k:'Rubbed or slightly bent corners',s:'Creased but firmly bound',p:'Yellowed, may have light marks',d:'Light spotting possible',o:'Noticeable old-book smell',m:'None, book is complete',w:'Some underlining or notes possible',sum:'Shows its age but is complete and fully readable. Priced lower for that.'}};
 var LABS=['Front cover','Back cover','Spine','Inside pages','Flaws close-up'];
@@ -1328,7 +1470,7 @@ function shEsc(){var r=shRoot();if(!r)return false;var d=r.querySelector('#sd');
 function shTg(k,v){var i=SH[k].indexOf(v);i<0?SH[k].push(v):SH[k].splice(i,1)}
 function shH(){var r=shRoot();if(!r)return;var n=view.querySelector(window.innerWidth>=1200?'.vnavd':'.vnavm'),h=n?n.offsetHeight:0;r.style.setProperty('--h',(h>40?h:84)+'px')}
 window.addEventListener('resize',shH);
-function shRefresh(){if(shRoot())shRender()}
+function shRefresh(){var r=shRoot();if(!r)return;if(r.classList.contains("stv"))syRender();else shRender()}
 function shop(){
  vb.classList.add('shopv');
  if(st.apply){st.apply=0;SH.cat=(st.cat&&st.cat!=='all')?[st.cat]:[];SH.cond=[];SH.au=[];SH.min=SH.max='';SH.offer=false;SH.qraw=st.q||'';SH.q=SH.qraw.trim().toLowerCase()}
@@ -1351,6 +1493,104 @@ function shop(){
  qi.addEventListener('input',function(){SH.qraw=this.value;SH.q=this.value.trim().toLowerCase();shRender()});
  shRender();shH();requestAnimationFrame(shH);setTimeout(shH,60);
  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(shH);
+}
+var SY={q:'',qraw:'',c:[],lvl:[],kind:[],board:[],sub:[],sort:'feat'};
+var SY_CATS=[['uni','University Admission',0,['Previous admission questions.','University-wise and unit-wise preparation.','MCQ practice and mock tests.']],['med','Medical Admission',0,['Biology, Chemistry, Physics and other subjects.','Previous questions and explanations.','Practice tests and model exams.']],['eng','Engineering Admission',0,['BUET, KUET, RUET, CUET and other universities.','Math, Physics and Chemistry preparation.','Previous questions and mock tests.']],['ssc','SSC Preparation',1,['Subject-wise and chapter-wise questions.','Board questions with answers.','MCQ practice and model tests.']],['hsc','HSC Preparation',1,['Science, Humanities and Business Studies.','Chapter-wise questions and explanations.','Board questions and model tests.']],['col','College Admission',0,['College admission information.','Preparation questions and practice tests.','Admission notices and requirements.']],['board','Board Questions',1,['SSC and HSC previous board questions.','Search by year, board and subject.','Answers and explanations.']],['mcq','MCQ Practice',2,['Practice questions by subject and chapter.','Instant answers and explanations.','Track correct and incorrect answers.']],['mock','Mock Exams',2,['Take timed online examinations.','Get automatic results after submission.','Review mistakes and improve performance.']],['res','Results and Rankings',2,['Check exam and mock exam results.','See how you rank among other students.','Track your improvement over time.']],['mat','Study Materials',3,['Notes, summaries and important formulas.','Subject-wise learning materials.','100% free resources for every student.']],['vid','Video Lessons',3,['Watch subject-wise video lessons.','Learn from teachers and educators.','Save lessons and track progress.']],['com','Study Community',3,['Ask questions and share knowledge.','Discuss subjects with other students.','Learn from teachers and other learners.']],['plan','Study Planner',2,['Create daily and weekly study plans.','Set study goals and exam countdowns.','Track study progress.']]];
+var SY_COLS=['classic','modern','nonfiction','combo'];
+var SY_CM={};SY_CATS.forEach(function(c){SY_CM[c[0]]=c});
+var SY_ROWS=['uni|DU admission questions|University|All units|Question bank|Free||2024','uni|DU unit-wise preparation|University|Unit-wise|Study guide|Free||2025','uni|JU admission questions|University|All units|Question bank|Free||2024','uni|RU admission questions|University|All units|Question bank|Free||2024','uni|CU admission questions|University|All units|Question bank|Free||2024','uni|GST cluster preparation|University|Cluster|Study guide|Free||2025','uni|University MCQ practice|University|Mixed|MCQ set|Free||2025','uni|University mock test|University|Mixed|Mock exam|Free||2025',
+'med|Medical Biology practice|Medical|Biology|MCQ set|Free||2025','med|Medical Chemistry practice|Medical|Chemistry|MCQ set|Free||2025','med|Medical Physics practice|Medical|Physics|MCQ set|Free||2025','med|Previous medical questions|Medical|All subjects|Question bank|Free||2024','med|Medical model exam|Medical|All subjects|Mock exam|Free||2025',
+'eng|BUET admission questions|Engineering|Math, Physics, Chemistry|Question bank|Free||2024','eng|KUET admission questions|Engineering|Math, Physics, Chemistry|Question bank|Free||2024','eng|RUET admission questions|Engineering|Math, Physics, Chemistry|Question bank|Free||2024','eng|CUET admission questions|Engineering|Math, Physics, Chemistry|Question bank|Free||2024','eng|Engineering Math preparation|Engineering|Math|Study guide|Free||2025','eng|Engineering Physics preparation|Engineering|Physics|Study guide|Free||2025','eng|Engineering Chemistry preparation|Engineering|Chemistry|Study guide|Free||2025','eng|Engineering mock test|Engineering|Mixed|Mock exam|Free||2025',
+'ssc|SSC Physics questions|SSC|Physics|Question bank|Free||2025','ssc|SSC Chemistry questions|SSC|Chemistry|Question bank|Free||2025','ssc|SSC Biology questions|SSC|Biology|Question bank|Free||2025','ssc|SSC Higher Math questions|SSC|Higher Math|Question bank|Free||2025','ssc|SSC General Math questions|SSC|General Math|Question bank|Free||2025','ssc|SSC English questions|SSC|English|Question bank|Free||2025','ssc|SSC Bangla questions|SSC|Bangla|Question bank|Free||2025','ssc|SSC ICT questions|SSC|ICT|Question bank|Free||2025','ssc|SSC model test|SSC|All subjects|Mock exam|Free||2025',
+'hsc|HSC Physics questions|HSC|Physics|Question bank|Free||2025','hsc|HSC Chemistry questions|HSC|Chemistry|Question bank|Free||2025','hsc|HSC Biology questions|HSC|Biology|Question bank|Free||2025','hsc|HSC Higher Math questions|HSC|Higher Math|Question bank|Free||2025','hsc|HSC ICT questions|HSC|ICT|Question bank|Free||2025','hsc|HSC Accounting (Business Studies)|HSC|Accounting|Question bank|Free||2025','hsc|HSC Economics (Humanities)|HSC|Economics|Question bank|Free||2025','hsc|HSC Bangla questions|HSC|Bangla|Question bank|Free||2025','hsc|HSC model test|HSC|All subjects|Mock exam|Free||2025',
+'col|College admission information|College|Admission info|Guide|Free||2026','col|College admission practice test|College|Mixed|Practice test|Free||2025','col|Admission notices|College|Notices|Notice|Free||2026','col|Admission requirements|College|Requirements|Guide|Free||2026','col|Preparation questions|College|Mixed|Question bank|Free||2025',
+'board|SSC Dhaka Board questions|SSC|All subjects|Board questions|Free|Dhaka|2024','board|SSC Rajshahi Board questions|SSC|All subjects|Board questions|Free|Rajshahi|2024','board|SSC Chattogram Board questions|SSC|All subjects|Board questions|Free|Chattogram|2024','board|SSC Comilla Board questions|SSC|All subjects|Board questions|Free|Comilla|2023','board|SSC Jashore Board questions|SSC|All subjects|Board questions|Free|Jashore|2023','board|HSC Dhaka Board questions|HSC|All subjects|Board questions|Free|Dhaka|2024','board|HSC Rajshahi Board questions|HSC|All subjects|Board questions|Free|Rajshahi|2024','board|HSC Chattogram Board questions|HSC|All subjects|Board questions|Free|Chattogram|2023','board|HSC Barishal Board questions|HSC|All subjects|Board questions|Free|Barishal|2023',
+'mcq|SSC Physics MCQ|SSC|Physics|MCQ set|Free||2025','mcq|SSC Chemistry MCQ|SSC|Chemistry|MCQ set|Free||2025','mcq|SSC Math MCQ|SSC|General Math|MCQ set|Free||2025','mcq|HSC Physics MCQ|HSC|Physics|MCQ set|Free||2025','mcq|HSC Chemistry MCQ|HSC|Chemistry|MCQ set|Free||2025','mcq|HSC Biology MCQ|HSC|Biology|MCQ set|Free||2025','mcq|HSC ICT MCQ|HSC|ICT|MCQ set|Free||2025','mcq|Daily admission MCQ|University|Mixed|MCQ set|Free||2026',
+'mock|SSC full mock exam|SSC|All subjects|Mock exam|Free||2025','mock|HSC full mock exam|HSC|All subjects|Mock exam|Free||2025','mock|Weekly subject quiz|All levels|Mixed|Mock exam|Free||2026','mock|Timed practice exam|All levels|Mixed|Mock exam|Free||2026','mock|Admission full mock|University|Mixed|Mock exam|Free||2025',
+'res|SSC results|SSC|All subjects|Results|Free||2025','res|HSC results|HSC|All subjects|Results|Free||2025','res|Admission results|University|Mixed|Results|Free||2026','res|Mock exam results|All levels|Mixed|Results|Free||2026','res|National rankings|All levels|Mixed|Rankings|Free||2026','res|Weekly leaderboard|All levels|Mixed|Rankings|Free||2026',
+'mat|Physics formula sheet|HSC|Physics|Notes|Free||2025','mat|Chemistry short notes|HSC|Chemistry|Notes|Free||2025','mat|Biology summaries|HSC|Biology|Notes|Free||2025','mat|Higher Math important formulas|SSC|Higher Math|Notes|Free||2025','mat|English grammar summary|SSC|English|Notes|Free||2025','mat|ICT quick notes|HSC|ICT|Notes|Free||2025','mat|Admission formula book|University|Mixed|Notes|Free||2026',
+'vid|Physics video lessons|HSC|Physics|Video lessons|Free||2025','vid|Chemistry video lessons|HSC|Chemistry|Video lessons|Free||2025','vid|Math video lessons|SSC|General Math|Video lessons|Free||2025','vid|Biology video lessons|HSC|Biology|Video lessons|Free||2025','vid|English video lessons|SSC|English|Video lessons|Free||2025','vid|Admission math lessons|University|Math|Video lessons|Free||2026',
+'com|Ask a question|All levels|Mixed|Community|Free||','com|Physics discussion|All levels|Physics|Community|Free||','com|Admission discussion|All levels|Mixed|Community|Free||','com|Ask a teacher|All levels|Mixed|Community|Free||','com|Share your notes|All levels|Mixed|Community|Free||',
+'plan|Daily study planner|All levels|Planner|Planner|Free||','plan|Weekly study planner|All levels|Planner|Planner|Free||','plan|Exam countdown|All levels|Planner|Planner|Free||','plan|Study goal tracker|All levels|Planner|Planner|Free||'];
+var SY_I=SY_ROWS.map(function(r){var p=r.split('|');return {c:p[0],t:p[1],lvl:p[2],sub:p[3],kind:p[4],acc:p[5],board:p[6],year:+p[7]||0}});
+var SY_V={c:SY_CATS.map(function(c){return c[0]}),lvl:['SSC','HSC','College','University','Medical','Engineering','All levels'],kind:[],board:[],sub:[]};
+SY_I.forEach(function(b){['kind','board','sub'].forEach(function(k){if(b[k]&&SY_V[k].indexOf(b[k])<0)SY_V[k].push(b[k])})});SY_V.board.sort();SY_V.sub.sort();
+var SY_F=[['c','Category'],['lvl','Level'],['kind','Type'],['board','Board'],['sub','Subject']];
+function syLab(k,v){return k==='c'?SY_CM[v][1]:v}
+function syOk(b,x){
+ for(var i=0;i<SY_F.length;i++){var k=SY_F[i][0];if(x!==k&&SY[k].length&&SY[k].indexOf(b[k])<0)return 0}
+ if(SY.q&&(b.t+' '+b.lvl+' '+b.sub+' '+b.kind+' '+b.board+' '+b.year+' '+SY_CM[b.c][1]).toLowerCase().indexOf(SY.q)<0)return 0;
+ return 1}
+function syRes(x){return SY_I.filter(function(b){return syOk(b,x)})}
+function sySorted(l){return l}
+function syCard(b){
+ var i=SY_I.indexOf(b),col=SY_COLS[SY_CM[b.c][2]],dk=col==='nonfiction'?'#1c1c1c':'#fff',meta=[b.lvl,b.sub,b.kind,b.board,b.year||''].filter(Boolean).join(' · ');
+ return '<button class="dsh-card res-card" data-sopen="'+i+'" aria-label="'+esc(b.t)+', view details"><span class="dsh-ic" style="background:'+COL[col]+';color:'+dk+'">'+sdIc(b.c,24)+'</span><h3>'+esc(b.t)+'</h3><p>'+esc(meta)+'</p><span class="dsh-ex">Open <i>→</i></span></button>'}
+function chipBtn(k,v){var on=SY[k].indexOf(v)>-1,n=syRes(k).filter(function(b){return b[k]===v}).length;return '<button class="dsh-chip'+(on?' on':'')+'" data-stg="'+k+'" data-v="'+esc(v)+'">'+esc(v)+' <b>'+n+'</b></button>'}
+function syChips(){
+ var parts=[],lvls=[],kinds=[];
+ syRes('lvl').forEach(function(b){if(lvls.indexOf(b.lvl)<0)lvls.push(b.lvl)});
+ syRes('kind').forEach(function(b){if(kinds.indexOf(b.kind)<0)kinds.push(b.kind)});
+ if(lvls.length>1)lvls.forEach(function(v){parts.push(chipBtn('lvl',v))});
+ if(kinds.length>1)kinds.forEach(function(v){parts.push(chipBtn('kind',v))});
+ return parts.join('')}
+function syNone(){
+ return '<div class="rnone" role="status">'+shNoneArt()+'<h3>No matching resources</h3><p>Try a shorter word, or clear the filters below — everything here is free, so there is always something to browse.</p><button class="add nbtn" data-sclear>'+shsv(SH_P.x,16)+' Clear filters</button></div>'}
+function syRender(){
+ var root=document.querySelector('.resv');if(!root)return;
+ var l=sySorted(syRes()),chips=syChips(),active=!!(SY.lvl.length||SY.kind.length||SY.q);
+ var rc=root.querySelector('#rchips');
+ rc.innerHTML=chips?chips+(active?'<button class="dsh-chip" data-sclearf>Clear filters '+shsv(SH_P.x,12)+'</button>':''):'';
+ rc.hidden=!chips;
+ root.querySelector('#rcnt').innerHTML='<b>'+l.length+'</b> free resource'+(l.length===1?'':'s')+(active?' found':' available')+' · nothing here is paid';
+ root.querySelector('#rgrid').innerHTML=l.length?l.map(syCard).join(''):syNone();
+}
+function syTg(k,v){var i=SY[k].indexOf(v);i<0?SY[k].push(v):SY[k].splice(i,1)}
+function syOpen(i){
+ var b=SY_I[i],cm=SY_CM[b.c];
+ openM('<h2>'+esc(b.t)+'</h2><p style="margin-bottom:8px">'+[b.lvl,b.sub,b.kind,b.board,b.year||''].filter(Boolean).map(esc).join(' · ')+'</p><p style="margin-bottom:10px"><span class="tag o">FREE FOR EVERY STUDENT</span></p><p><b>'+esc(cm[1])+'</b></p><ul class="abl">'+cm[3].map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><button class="sub" data-act="msg" data-n="our team" data-t="our team">Ask our team about this</button>')}
+var SD_USER={recent:[['SUBJECT','HSC Physics','Chapter 5 · Video lesson','vid',64],['COURSE','Medical Biology course','Lesson 12 of 30','med',38],['COURSE','SSC Higher Math','Chapter 3 of 10','ssc',30]],done:12,doneWeek:3,acc:78,time:'24h 30m',week:[['Sat',3],['Sun',4],['Mon',2.5],['Tue',5],['Wed',3.5],['Thu',4.5],['Fri',2]],prog:62};
+var SD_IC={uni:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/>',med:'<rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/>',eng:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',col:'<path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/>',ssc:'<path d="M2 5h7a3 3 0 013 3v13a2 2 0 00-2-2H2z"/><path d="M22 5h-7a3 3 0 00-3 3v13a2 2 0 012-2h8z"/>',hsc:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',board:'<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h6"/>',mat:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',mcq:'<path d="M4 6l2 2 3-3M4 14l2 2 3-3M12 7h8M12 15h8"/>',mock:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',res:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0zM17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/>',vid:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>',com:'<path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/>',plan:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',ok:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>'};
+var SD_SECS=[['Admission Preparation','Get ready for the admission test you are aiming for.',0,[['uni','University Admission','Previous questions, unit-wise preparation and mock tests.'],['med','Medical Admission','Biology, Chemistry and Physics practice with explanations.'],['eng','Engineering Admission','BUET, KUET, RUET and CUET preparation in Math, Physics and Chemistry.'],['col','College Admission','Admission information, practice tests, notices and requirements.']]],
+['Board Examination','Everything for SSC and HSC in one place.',1,[['ssc','SSC Preparation','Subject-wise and chapter-wise questions with answers.'],['hsc','HSC Preparation','Science, Humanities and Business Studies.'],['board','Board Questions','Previous SSC and HSC questions by year, board and subject.'],['mat','Study Materials','Notes, summaries and important formulas.']]],
+['Practice & Exams','Practice often, test yourself, track your rank.',2,[['mcq','MCQ Practice','Practice by subject and chapter with instant answers.'],['mock','Mock Exams','Timed online exams with automatic results.'],['res','Results and Rankings','Check your results and see how you rank.']]],
+['Learning Resources','Learn at your own pace.',3,[['vid','Video Lessons','Subject-wise lessons from teachers and educators.'],['com','Study Community','Ask questions and discuss with other students.'],['plan','Study Planner','Daily and weekly plans, goals and exam countdowns.']]]];
+function sdIc(k,s){return '<svg viewBox="0 0 24 24" width="'+(s||26)+'" height="'+(s||26)+'" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SD_IC[k]+'</svg>'}
+function sdHits(q){q=q.trim().toLowerCase();if(!q)return[];return SY_I.filter(function(b){return (b.t+' '+b.lvl+' '+b.sub+' '+b.kind+' '+b.board+' '+b.year+' '+SY_CM[b.c][1]).toLowerCase().indexOf(q)>-1})}
+function study(){
+ var U=SD_USER,nm=st.user?st.user.split(' ')[0]:'',D=document;
+ var card=function(c,g){var col=SY_COLS[g];return '<button class="dsh-card" data-go="study-'+c[0]+'"><span class="dsh-ic" style="background:'+COL[col]+';color:'+(col==='nonfiction'?'#1c1c1c':'#fff')+'">'+sdIc(c[0])+'</span><h3>'+c[1]+'</h3><p>'+c[2]+'</p><span class="dsh-ex">Explore <i>→</i></span></button>'};
+ var secs=SD_SECS.map(function(s){return '<section class="dsh-sec"><div class="dsh-sh"><h2>'+s[0]+'</h2><p>'+s[1]+'</p></div><div class="dsh-grid">'+s[3].map(function(c){return card(c,s[2])}).join('')+'</div></section>'}).join('');
+ var cont=U.recent.map(function(r){return '<button class="dsh-card dsh-cont" data-go="study-'+r[3]+'"><span class="dsh-tag">'+r[0]+'</span><h3>'+r[1]+'</h3><p>'+r[2]+'</p><div class="dsh-bar" role="progressbar" aria-valuenow="'+r[4]+'" aria-valuemin="0" aria-valuemax="100"><i style="width:'+r[4]+'%"></i></div><span class="dsh-pc"><b>'+r[4]+'% complete</b><span class="dsh-ex">Resume <i>→</i></span></span></button>'}).join('');
+ var stat=function(ic,l,v,sub,bar){return '<div class="dsh-stat"><div class="dsh-sl"><span class="dsh-si">'+sdIc(ic,20)+'</span><span>'+l+'</span></div><b>'+v+'</b><small>'+sub+'</small>'+(bar!=null?'<div class="dsh-bar"><i style="width:'+bar+'%"></i></div>':'')+'</div>'};
+ var bars=U.week.map(function(d){return '<div><i style="height:'+Math.round(d[1]*20)+'px" title="'+d[1]+' hours"></i><em>'+d[0]+'</em></div>'}).join('');
+ vb.innerHTML='<div class="dsh"><header class="dsh-head"><div><h1>Study</h1><p>'+(nm?'Welcome back, '+esc(nm)+'.':'Welcome back.')+' Pick up where you left off, or find an exam, subject or study material.</p></div><div class="dsh-search"><div class="dsh-sbox">'+shsv(SH_P.search)+'<input id="dq" type="search" placeholder="Search exams, subjects, questions and study materials" autocomplete="off" aria-label="Search study"></div><div class="dsh-res" id="dres" hidden></div></div><div class="dsh-pop"><span>Popular:</span><button class="dsh-chip" data-go="study-mcq">MCQ Practice</button><button class="dsh-chip" data-go="study-board">Board Questions</button><button class="dsh-chip" data-go="study-mock">Mock Exams</button><button class="dsh-chip" data-go="study-plan">Study Planner</button></div></header>'+
+ '<section class="dsh-sec"><div class="dsh-sh"><h2>Continue Studying</h2><p>Your recent subjects and ongoing courses.</p></div><div class="dsh-grid">'+cont+'</div></section>'+secs+
+ '<section class="dsh-sec"><div class="dsh-sh"><h2>Personal Progress</h2><p>How you are doing this week.</p></div><div class="dsh-stats">'+stat('ok','Completed exams',U.done,U.doneWeek+' this week')+stat('target','Practice accuracy',U.acc+'%','Correct answers in MCQ practice',U.acc)+stat('clock','Study time',U.time,'This week')+stat('trend','Learning progress',U.prog+'%','Across your current courses',U.prog)+'<div class="dsh-stat dsh-week"><div class="dsh-sl"><span class="dsh-si">'+sdIc('clock',20)+'</span><span>Study time by day</span></div><div class="dsh-bars">'+bars+'</div></div></div></section></div>';
+ var r=vb.querySelector('.dsh'),q=r.querySelector('#dq'),res=r.querySelector('#dres');
+ var seeAll=function(){SY.qraw=q.value;SY.q=q.value.trim().toLowerCase();SY_PEND=1;go('study-all')};
+ q.addEventListener('input',function(){var h=sdHits(q.value);if(!q.value.trim()){res.hidden=true;return}
+  res.innerHTML=h.length?h.slice(0,6).map(function(b){return '<button class="dsh-hit" data-sopen="'+SY_I.indexOf(b)+'"><b>'+esc(b.t)+'</b><small>'+[b.lvl,b.sub,b.kind].map(esc).join(' · ')+'</small></button>'}).join('')+'<button class="dsh-all" data-seeall>See all '+h.length+' result'+(h.length===1?'':'s')+' →</button>':'<div class="dsh-no">No matches. Try a subject, exam or board name.</div>';res.hidden=false});
+ q.addEventListener('keydown',function(e){if(e.key==='Enter'&&q.value.trim()){e.preventDefault();seeAll()}else if(e.key==='Escape'&&!res.hidden){res.hidden=true;e.stopPropagation()}});
+ q.addEventListener('focus',function(){if(q.value.trim())q.dispatchEvent(new Event('input'))});
+ r.addEventListener('click',function(e){var t=e.target.closest('[data-sopen],[data-seeall]');if(t){if(t.dataset.seeall!=null)seeAll();else{res.hidden=true;syOpen(+t.dataset.sopen)}return}if(!e.target.closest('.dsh-search'))res.hidden=true});
+}
+var SY_PEND=0;
+function studyList(id){
+ var ttl=id==='all'?'All Study Resources':SY_CM[id][1];
+ SY.c=id==='all'?[]:[id];SY.lvl=[];SY.kind=[];SY.board=[];SY.sub=[];SY.sort='feat';
+ if(SY_PEND)SY_PEND=0;else SY.q=SY.qraw='';
+ var desc=id==='all'?'Every exam, subject and resource on this page is completely free for every student — no sign-up, no payment.':SY_CM[id][3].join(' ')+' Completely free for every student.';
+ vb.innerHTML='<div class="dsh resv"><header class="dsh-head"><div><h1>'+esc(ttl)+'</h1><p>'+esc(desc)+'</p></div><div class="dsh-search"><div class="dsh-sbox">'+shsv(SH_P.search)+'<input id="rq" type="search" placeholder="Search by subject, board, type or year" autocomplete="off" aria-label="Search '+esc(ttl)+'"></div></div></header><div class="dsh-pop" id="rchips" hidden></div><p class="cnt" id="rcnt"></p><div class="dsh-grid" id="rgrid"></div></div>';
+ var root=vb.querySelector('.resv'),qi=root.querySelector('#rq');qi.value=SY.qraw;
+ root.addEventListener('click',function(e){
+  var t=e.target.closest('[data-sopen],[data-stg],[data-sclear],[data-sclearf]');if(!t||!root.contains(t))return;
+  if(t.dataset.sopen!=null)syOpen(+t.dataset.sopen);
+  else if(t.dataset.stg){syTg(t.dataset.stg,t.dataset.v);syRender()}
+  else if(t.dataset.sclear!=null||t.dataset.sclearf!=null){SY.lvl=[];SY.kind=[];SY.q=SY.qraw='';qi.value='';syRender()}
+ });
+ qi.addEventListener('input',function(){SY.qraw=this.value;SY.q=this.value.trim().toLowerCase();syRender()});
+ syRender();
 }
 function about(){
  var sg=B.filter(function(b){return !b.items}).length,cm=B.filter(function(b){return b.items}).length;
@@ -1376,11 +1616,13 @@ function about(){
  '<section class="abcta"><h2>Ready to give a book a second life?</h2><div class="abrow"><button class="sub abbtn" data-act="sell">Post your old books</button><button class="lnk" data-act="donate">Donate books</button><button class="lnk" data-go="shop">Browse books</button></div></section>';
 }
 function freebooks(){
+ vb.classList.add('freepg');
  var fr=B.filter(function(b){return !b.items&&b.p===0});
  var none='<div class="abfeat" style="background-color:'+COL.nonfiction+';color:#1c1c1c"><div><div class="abeyb">NOTHING ON THE SHELF YET</div><h2>No free books right now</h2><p>Free books come from donations, so the shelf changes often. Ask us and we will let you know when new ones arrive.</p><button class="abw dkb" data-act="msg" data-n="our team" data-t="our team">Ask our team</button></div></div>';
  vb.innerHTML='<div class="tmpage"><section class="abhero"><div class="abt"><div class="abey">FREE BOOKS</div><h1 class="abh1">Books that<br>cost nothing.</h1><p class="abp">Donated books and free e-books for anyone who needs them. Pick one up, read it, and pass it on when you are done.</p><div class="abrow"><button class="sub abbtn" data-act="donate">Donate books</button><button class="lnk" data-go="shop">Browse all books</button></div></div></section>'+
  '<section class="abstats"><div><b>'+fr.length+'</b><span>free printed books</span></div><div><b>'+FEB.length+'</b><span>free e-books</span></div><div><b>৳0</b><span>to pick up or read</span></div><div><b>0</b><span>sign-ups needed</span></div></section>'+
- '<section class="absec"><div class="abeyb">FREE PRINTED BOOKS</div><h2 class="abh2">Take one home</h2>'+(fr.length?'<div class="grid" id="lfree">'+fr.map(card).join('')+'</div>':none)+'</section>'+
+ '<section class="absec"><div class="abeyb">FREE PRINTED BOOKS</div><h2 class="abh2">Take one home</h2>'+(fr.length?'<div class="grid" id="lfree">'+fr.map(fcard).join('')+'</div>':none)+'</section>'+
+ '<section class="absec"><div class="abeyb">FREE COMBOS</div><h2 class="abh2">Take the whole set</h2><div class="grid" id="lfcombo">'+FC.map(fcard).join('')+'</div></section>'+
  '<section class="absec"><div class="abeyb">FREE E-BOOKS</div><h2 class="abh2">Read now, on any screen</h2><div class="grid" id="lfeb">'+FEB.map(ecard).join('')+'</div></section></div>';
 }
 function ebooks(){
@@ -1406,11 +1648,11 @@ function team(){
  '<section class="absec"><div class="abfeat" style="background-color:'+COL.classic+';color:#fff"><div><div class="abeyb">JOIN THE TEAM</div><h2>Love books? Help us pass them on.</h2><p>We are always happy to hear from readers, students and volunteers who want to help old books find new homes.</p><button class="abw" data-act="join">Get in touch</button></div>'+li(['Volunteer reader: help check and grade books','Campus ambassador: spread the word at your school or college','Collection partner: help gather donated books','Something else? Tell us how you’d like to help'])+'</div></section>'+
  '<section class="abcta"><h2>Got a question for the team?</h2><div class="abrow"><button class="sub abbtn" data-act="msg" data-n="our team" data-t="our team">Message our team</button><button class="lnk" data-go="shop">Browse books</button></div></section></div>';
 }
-var V={shop:['Shop',shop],about:['About us',about],free:['Free Books',freebooks],ebooks:['E-Books',ebooks],team:['Team',team]};
+var V={shop:['Shop',shop],about:['About us',about],free:['Free Books',freebooks],ebooks:['E-Books',ebooks],study:['Study',study],team:['Team',team]};
 function route(){
- var h=location.hash.slice(1),mm=/^book-(\d+)$/.exec(h),v=mm&&B[+mm[1]]?['Book details',function(){book(+mm[1])}]:V[h];
+ var h=location.hash.slice(1),mm=/^book-(\d+)$/.exec(h),sm=/^study-([a-z]+)$/.exec(h),sid=sm&&(sm[1]==='all'||SY_CM[sm[1]])?sm[1]:null,v=mm&&B[+mm[1]]?['Book details',function(){book(+mm[1])}]:sid?[sid==='all'?'All study items':SY_CM[sid][1],function(){studyList(sid)}]:V[h];
  if(!v){view.hidden=true;document.body.classList.remove('bkopen');document.body.style.overflow='';return}
- vt.textContent=v[0];view.classList.add('isbook');document.querySelectorAll('.bn-links button,.bn-panel button').forEach(function(n){if(n.dataset.go===h)n.setAttribute('aria-current','page');else n.removeAttribute('aria-current')});var bn=document.getElementById('bnav');if(bn)bn.classList.remove('open');document.body.classList.toggle('bkopen',!!mm);vb.className='vbody';v[1]();paintCd();view.hidden=false;view.scrollTop=0;document.body.style.overflow='hidden';
+ vt.textContent=v[0];var vbk=view.querySelector('.vback');if(vbk){vbk.dataset.go=sid?'study':'home';vbk.textContent=sid?'← Study':'← Back'}view.classList.add('isbook');document.querySelectorAll('.bn-links button,.bn-panel button').forEach(function(n){if(n.dataset.go===(sid?'study':h))n.setAttribute('aria-current','page');else n.removeAttribute('aria-current')});var bn=document.getElementById('bnav');if(bn)bn.classList.remove('open');document.body.classList.toggle('bkopen',!!mm);vb.className='vbody';v[1]();paintCd();view.hidden=false;view.scrollTop=0;document.body.style.overflow='hidden';
 }
 function setBtn(t){document.querySelectorAll('.btn,.mbtn,.nbtn').forEach(function(b){b.textContent=t})}
 var acts={
@@ -1418,6 +1660,8 @@ var acts={
  thumb:function(x){var b=B[st.cur],k=+x.dataset.k,im=pic(b,k);document.querySelectorAll('.th').forEach(function(t){t.classList.toggle('on',t===x)});$('#gmain').innerHTML=cover(im?Object.assign({},b,{img:im}):b);$('#gcap').textContent=LABS[k]+(im?'':' · photo not added yet')},
  share:function(){var u=location.href;if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){say('Link copied')},function(){say('Copy the link from the address bar')})}else say('Copy the link from the address bar')},
  buy:function(x){st.items.push(+x.dataset.i);sync();acts.checkout()},
+ req:function(x){var b=B[+x.dataset.i];reqM(b)},
+ reqc:function(x){reqM(FC[+x.dataset.k])},
  ask:function(x){var b=B[+x.dataset.i];openM('<h2>Ask the seller</h2><p style="margin-bottom:8px">About: <b>'+esc(b.t)+'</b></p><form id="qf"><textarea class="fi" rows="4" required placeholder="Your question, for example: are all pages intact?"></textarea><input class="fi" name="ct" placeholder="Your phone or email" required><button class="sub">Send question</button></form>')},menu:function(x){x.closest('.mnav').classList.toggle('open')},bmenu:function(x){var o=$('#bnav').classList.toggle('open');x.setAttribute('aria-expanded',o)},
  rm:function(x){st.items.splice(+x.dataset.k,1);sync();cartM()},
  checkout:function(){openM('<h2>Checkout</h2><form id="of"><input class="fi" name="nm" placeholder="Full name" required autocomplete="name"><input class="fi" name="ph" type="tel" placeholder="Phone number" required autocomplete="tel"><textarea class="fi" name="ad" rows="3" placeholder="Delivery address" required></textarea><button class="sub">Place order</button></form>')},
@@ -1451,6 +1695,7 @@ document.addEventListener('submit',function(e){
  else if(f.id==='coachf'){var cn=f.elements.nm.value.trim();closeM();say('Thanks, '+cn.split(' ')[0]+'! We got your coaching request')}
  else if(f.id==='donf'){var dn=f.elements.nm.value.trim();closeM();say('Thank you, '+dn.split(' ')[0]+'! We got your donation details')}
  else if(f.id==='sellf'){var bt=f.elements.t.value.trim();closeM();say('Thanks! We got the details for “'+bt+'”')}
+ else if(f.id==='reqf'){var rn=f.elements.nm.value.trim(),rt=f.dataset.t;closeM();say('Thanks, '+rn.split(' ')[0]+'! We got your request for “'+rt+'”')}
  else if(f.id==='nlf'){var ne=f.elements.em.value.trim();f.reset();say('You’re in! New arrivals will reach '+ne)}
  else if(f.id==='mf'){closeM();say('Message sent to '+f.dataset.n)}
 });
